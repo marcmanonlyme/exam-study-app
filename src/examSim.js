@@ -8,10 +8,54 @@ export function renderExamSimConfig(mainContent, modules) {
     </form>
     <h2>Intentos anteriores</h2>
     <table id='examScoresTable' style='width:100%;margin-top:12px;border-collapse:collapse;'>
-      <thead><tr style='background:#eaf4ff;'><th>Correctas</th><th>Preguntas</th><th>Duración</th></tr></thead>
+      <thead><tr style='background:#eaf4ff;'>
+        <th id='sortCorrect' style='cursor:pointer;'>Correctas <span id='arrowCorrect'></span></th>
+        <th id='sortTotal' style='cursor:pointer;'>Preguntas <span id='arrowTotal'></span></th>
+        <th id='sortDuration' style='cursor:pointer;'>Duración <span id='arrowDuration'></span></th>
+      </tr></thead>
       <tbody></tbody>
     </table>`;
+  // Sorting state
+  window.examSimSortState = { column: null, asc: true };
   renderExamScoresTable();
+  // Update visual cues after rendering
+  function updateSortArrows() {
+    const sortState = window.examSimSortState || { column: null, asc: true };
+    const arrows = {
+      asc: '&#x25B2;', // ▲
+      desc: '&#x25BC;' // ▼
+    };
+    document.getElementById('arrowCorrect').innerHTML = sortState.column === 'correct' ? arrows[sortState.asc ? 'asc' : 'desc'] : '';
+    document.getElementById('arrowTotal').innerHTML = sortState.column === 'total' ? arrows[sortState.asc ? 'asc' : 'desc'] : '';
+    document.getElementById('arrowDuration').innerHTML = sortState.column === 'duration' ? arrows[sortState.asc ? 'asc' : 'desc'] : '';
+    // Highlight sorted column
+    ['sortCorrect','sortTotal','sortDuration'].forEach(id => {
+      document.getElementById(id).style.background = '';
+      document.getElementById(id).style.color = '';
+    });
+    if (sortState.column) {
+      const colId = sortState.column === 'correct' ? 'sortCorrect' : sortState.column === 'total' ? 'sortTotal' : 'sortDuration';
+      document.getElementById(colId).style.background = '#d0e6ff';
+      document.getElementById(colId).style.color = '#2d6cdf';
+    }
+  }
+  updateSortArrows();
+  // Add sorting event listeners
+  document.getElementById('sortCorrect').onclick = function() {
+    window.examSimSortState = { column: 'correct', asc: window.examSimSortState.column === 'correct' ? !window.examSimSortState.asc : true };
+    renderExamScoresTable();
+    updateSortArrows();
+  };
+  document.getElementById('sortTotal').onclick = function() {
+    window.examSimSortState = { column: 'total', asc: window.examSimSortState.column === 'total' ? !window.examSimSortState.asc : true };
+    renderExamScoresTable();
+    updateSortArrows();
+  };
+  document.getElementById('sortDuration').onclick = function() {
+    window.examSimSortState = { column: 'duration', asc: window.examSimSortState.column === 'duration' ? !window.examSimSortState.asc : true };
+    renderExamScoresTable();
+    updateSortArrows();
+  };
   document.getElementById('startExamBtn').onclick = function(e) {
     e.preventDefault();
     const timeLimit = parseInt(document.getElementById('examTime').value, 10);
@@ -23,7 +67,24 @@ export function renderExamSimConfig(mainContent, modules) {
 function renderExamScoresTable() {
   const tbody = document.querySelector('#examScoresTable tbody');
   tbody.innerHTML = '';
-  const scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
+  let scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
+  // Sort if needed
+  const sortState = window.examSimSortState || { column: null, asc: true };
+  if (sortState.column) {
+    scores = scores.slice();
+    scores.sort((a, b) => {
+      if (sortState.column === 'duration') {
+        // Parse mm:ss
+        const parseTime = t => {
+          const [m, s] = t.split(':').map(Number);
+          return m * 60 + s;
+        };
+        return sortState.asc ? parseTime(a.duration) - parseTime(b.duration) : parseTime(b.duration) - parseTime(a.duration);
+      } else {
+        return sortState.asc ? a[sortState.column] - b[sortState.column] : b[sortState.column] - a[sortState.column];
+      }
+    });
+  }
   scores.forEach((score, idx) => {
     tbody.innerHTML += `<tr>
       <td>${score.correct}</td>
