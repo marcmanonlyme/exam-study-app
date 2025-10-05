@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué métrica evalúa la capacidad del software para funcionar correctamente bajo condiciones específicas?",
+    "options": ["Fiabilidad", "Usabilidad", "Portabilidad", "Eficiencia"],
+    "answer": 0,
+    "explanation": "La fiabilidad mide si el software puede operar sin fallos en condiciones definidas durante un tiempo determinado."
+  }
+  // ...continúa el archivo original...
+]

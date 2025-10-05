@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué lenguaje se usa para desarrollar aplicaciones móviles nativas en Android?",
+    "options": ["Swift", "Java", "Kotlin", "Dart"],
+    "answer": 2,
+    "explanation": "Kotlin es el lenguaje oficial recomendado por Google para el desarrollo nativo en Android."
+  }
+  // ...continúa el archivo original...
+]

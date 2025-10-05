@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué dispositivo se utiliza para conectar redes diferentes y dirigir paquetes entre ellas?",
+    "options": ["Switch", "Router", "Hub", "Firewall"],
+    "answer": 1,
+    "explanation": "El router conecta redes distintas y determina la mejor ruta para enviar paquetes de datos."
+  }
+  // ...continúa el archivo original...
+]

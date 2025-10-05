@@ -1,0 +1,45 @@
+[
+  {
+    "question": "¿Qué es un tipo de dato primitivo en programación?",
+    "options": ["Una clase definida por el usuario", "Una estructura de control", "Un tipo básico proporcionado por el lenguaje", "Una función matemática"],
+    "answer": 2,
+    "explanation": "Los tipos de datos primitivos son los más básicos, como entero, booleano o carácter, y son proporcionados por el lenguaje."
+  },
+  {
+    "question": "¿Cuál es la estructura de datos más adecuada para representar una jerarquía?",
+    "options": ["Lista", "Cola", "Árbol", "Pila"],
+    "answer": 2,
+    "explanation": "Los árboles permiten representar relaciones jerárquicas como padre-hijo, ideales para estructuras como directorios o genealogías."
+  },
+  {
+    "question": "¿Qué algoritmo tiene una complejidad promedio de O(n log n)?",
+    "options": ["Burbuja", "Quicksort", "Selección", "Inserción"],
+    "answer": 1,
+    "explanation": "Quicksort es eficiente en promedio, con complejidad O(n log n), aunque en el peor caso puede ser O(n²)."
+  },
+  {
+    "question": "¿Qué principio SOLID indica que una clase debe tener una sola razón para cambiar?",
+    "options": ["Open/Closed", "Liskov Substitution", "Single Responsibility", "Interface Segregation"],
+    "answer": 2,
+    "explanation": "El principio de responsabilidad única (SRP) establece que una clase debe tener una sola responsabilidad."
+  },
+  {
+    "question": "¿Qué modelo de desarrollo enfatiza la gestión de riesgos en cada iteración?",
+    "options": ["Cascada", "Incremental", "Ágil", "Espiral"],
+    "answer": 3,
+    "explanation": "El modelo espiral incorpora análisis de riesgos en cada ciclo, ideal para proyectos complejos y cambiantes."
+  },
+  {
+    "question": "¿Qué tipo de prueba verifica que el sistema cumple con los requisitos del usuario?",
+    "options": ["Prueba unitaria", "Prueba de integración", "Prueba de validación", "Prueba de regresión"],
+    "answer": 2,
+    "explanation": "La validación asegura que el sistema cumple con lo que el usuario espera, según los requisitos definidos."
+  },
+  {
+    "question": "¿Qué estructura de datos sigue el principio FIFO?",
+    "options": ["Pila", "Cola", "Árbol", "Lista circular"],
+    "answer": 1,
+    "explanation": "Una cola sigue el principio FIFO (First In, First Out), ideal para tareas como impresión o procesamiento de solicitudes."
+  }
+  // ...continúa el archivo original...
+]

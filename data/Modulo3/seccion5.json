@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué tipo de objeto en SQL permite ejecutar código automáticamente ante eventos como INSERT o DELETE?",
+    "options": ["Vista", "Función", "Trigger", "Índice"],
+    "answer": 2,
+    "explanation": "Un trigger se activa automáticamente ante eventos definidos en una tabla, como inserciones o eliminaciones."
+  }
+  // ...continúa el archivo original...
+]

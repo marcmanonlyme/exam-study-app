@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué técnica se usa para representar el flujo de datos entre procesos y almacenes?",
+    "options": ["Diagrama de clases", "Diagrama de flujo de datos (DFD)", "Diagrama de estados", "Diagrama de casos de uso"],
+    "answer": 1,
+    "explanation": "El DFD muestra cómo los datos se mueven entre procesos, almacenes y entidades externas."
+  }
+  // ...continúa el archivo original...
+]

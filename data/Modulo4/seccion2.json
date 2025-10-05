@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué protocolo se utiliza para acceder de forma remota y segura a un servidor?",
+    "options": ["FTP", "SSH", "HTTP", "Telnet"],
+    "answer": 1,
+    "explanation": "SSH (Secure Shell) permite acceder y administrar servidores de forma segura mediante cifrado."
+  }
+  // ...continúa el archivo original...
+]

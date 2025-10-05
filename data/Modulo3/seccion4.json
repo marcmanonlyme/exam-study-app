@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué comando SQL se usa para eliminar una vista?",
+    "options": ["DROP VIEW", "DELETE VIEW", "REMOVE VIEW", "TRUNCATE VIEW"],
+    "answer": 0,
+    "explanation": "DROP VIEW elimina una vista previamente creada en la base de datos."
+  }
+  // ...continúa el archivo original...
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "question": "¿Qué tipo de dato se utiliza para representar verdadero o falso?",
+    "options": ["Entero", "Booleano", "Cadena", "Flotante"],
+    "answer": 1,
+    "explanation": "El tipo booleano representa valores lógicos: verdadero (true) o falso (false)."
+  },
+  {
+    "question": "¿Qué estructura de control permite repetir un bloque de código mientras se cumpla una condición?",
+    "options": ["If", "Switch", "While", "Break"],
+    "answer": 2,
+    "explanation": "La estructura while ejecuta un bloque de código mientras la condición sea verdadera."
+  },
+  {
+    "question": "¿Qué operador se utiliza para comparar igualdad en la mayoría de los lenguajes?",
+    "options": ["=", "==", "!=", "<>"],
+    "answer": 1,
+    "explanation": "El operador == se usa para comparar si dos valores son iguales."
+  },
+  {
+    "question": "¿Qué estructura de datos permite acceder a elementos por índice?",
+    "options": ["Lista enlazada", "Árbol", "Array", "Cola"],
+    "answer": 2,
+    "explanation": "Los arrays permiten acceso directo a sus elementos mediante índices numéricos."
+  },
+  {
+    "question": "¿Qué tipo de algoritmo se usa para buscar un elemento en una lista ordenada dividiendo el espacio de búsqueda?",
+    "options": ["Búsqueda lineal", "Búsqueda binaria", "Búsqueda secuencial", "Búsqueda por hash"],
+    "answer": 1,
+    "explanation": "La búsqueda binaria divide el espacio en mitades, reduciendo el número de comparaciones."
+  },
+  {
+    "question": "¿Qué principio de diseño indica que los objetos deben ser reemplazables por instancias de sus subtipos?",
+    "options": ["Open/Closed", "Liskov Substitution", "Single Responsibility", "Interface Segregation"],
+    "answer": 1,
+    "explanation": "El principio de sustitución de Liskov establece que los subtipos deben poder sustituir a sus tipos base sin alterar el comportamiento."
+  },
+  {
+    "question": "¿Qué modelo de desarrollo se basa en entregas frecuentes y colaboración constante?",
+    "options": ["Cascada", "Ágil", "Espiral", "Prototipos"],
+    "answer": 1,
+    "explanation": "Ágil promueve entregas frecuentes, colaboración y adaptación continua a los cambios."
+  }
+  // ...continúa el archivo original...
+]

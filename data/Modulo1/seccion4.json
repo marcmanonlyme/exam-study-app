@@ -1,0 +1,45 @@
+[
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que el sistema cumple con los requisitos funcionales?",
+    "options": ["Prueba de integración", "Prueba de validación", "Prueba de carga", "Prueba de unidad"],
+    "answer": 1,
+    "explanation": "La validación asegura que el sistema cumple con los requisitos funcionales definidos por el usuario."
+  },
+  {
+    "question": "¿Qué estructura de datos se usa para implementar una cola de impresión?",
+    "options": ["Pila", "Cola", "Lista doblemente enlazada", "Árbol AVL"],
+    "answer": 1,
+    "explanation": "Una cola sigue el principio FIFO, ideal para tareas como impresión donde el orden de llegada importa."
+  },
+  {
+    "question": "¿Qué técnica permite dividir un problema en subproblemas más pequeños del mismo tipo?",
+    "options": ["Iteración", "Recursión", "Encapsulamiento", "Polimorfismo"],
+    "answer": 1,
+    "explanation": "La recursión resuelve problemas dividiéndolos en versiones más simples de sí mismos."
+  },
+  {
+    "question": "¿Qué tipo de mantenimiento se realiza para prevenir errores futuros mediante mejoras?",
+    "options": ["Correctivo", "Perfectivo", "Preventivo", "Adaptativo"],
+    "answer": 2,
+    "explanation": "El mantenimiento preventivo busca evitar fallos futuros mediante revisiones o mejoras."
+  },
+  {
+    "question": "¿Qué principio SOLID indica que los módulos deben estar abiertos para extensión pero cerrados para modificación?",
+    "options": ["Open/Closed", "Single Responsibility", "Liskov Substitution", "Interface Segregation"],
+    "answer": 0,
+    "explanation": "El principio Open/Closed promueve que el código pueda extenderse sin modificar su estructura original."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que los módulos interactúan correctamente?",
+    "options": ["Prueba de integración", "Prueba de sistema", "Prueba de aceptación", "Prueba de unidad"],
+    "answer": 0,
+    "explanation": "La prueba de integración valida que los módulos se comuniquen y funcionen correctamente en conjunto."
+  },
+  {
+    "question": "¿Qué norma define los procesos del ciclo de vida del software?",
+    "options": ["ISO/IEC 9126", "IEEE 830", "ISO/IEC 12207", "IEEE 1012"],
+    "answer": 2,
+    "explanation": "ISO/IEC 12207 define los procesos y actividades del ciclo de vida del software."
+  }
+  // ...continúa el archivo original...
+]

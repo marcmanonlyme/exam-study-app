@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué es una base de datos relacional?",
+    "options": ["Una colección de archivos planos", "Un sistema que almacena datos en tablas relacionadas", "Un conjunto de algoritmos de búsqueda", "Un modelo de datos orientado a objetos"],
+    "answer": 1,
+    "explanation": "Una base de datos relacional organiza los datos en tablas con relaciones entre ellas mediante claves."
+  }
+  // ...continúa el archivo original...
+]

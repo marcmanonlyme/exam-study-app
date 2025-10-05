@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué tipo de modelo representa cómo se almacenan físicamente los datos?",
+    "options": ["Modelo lógico", "Modelo conceptual", "Modelo físico", "Modelo relacional"],
+    "answer": 2,
+    "explanation": "El modelo físico describe cómo se implementan los datos en el sistema de almacenamiento."
+  }
+  // ...continúa el archivo original...
+]
