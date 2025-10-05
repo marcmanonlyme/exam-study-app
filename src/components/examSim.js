@@ -102,7 +102,9 @@ function renderExamScoresTable() {
     });
   }
   scores.forEach((score, idx) => {
+    const dateStr = score.date ? new Date(score.date).toLocaleString() : '';
     tbody.innerHTML += `<tr>
+      <td>${dateStr}</td>
       <td>${score.correct}</td>
       <td>${score.total}</td>
       <td>${score.duration}</td>
@@ -122,5 +124,184 @@ function renderExamScoresTable() {
 }
 
 export async function startExamSim(mainContent, modules, timeLimit, numQuestions) {
-  // ...existing code...
+  // Gather all questions from all modules
+  let allQuestions = [];
+  for (const mod of modules) {
+    for (const sec of mod.sections) {
+      try {
+        const res = await fetch(`data/${mod.name}/seccion${sec}.json`);
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          allQuestions = allQuestions.concat(data);
+        } else if (Array.isArray(data.preguntas)) {
+          allQuestions = allQuestions.concat(data.preguntas);
+        }
+      } catch (e) {
+        // Ignore missing files
+      }
+    }
+  }
+  // Shuffle and select questions
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+  const questions = shuffle(allQuestions).slice(0, numQuestions);
+  let currentIndex = 0;
+  let userAnswers = Array(questions.length).fill(null);
+  let startTime = Date.now();
+  let timerId = null;
+  let timeLeft = timeLimit > 0 ? timeLimit * 60 : null;
+
+  function renderExamQuestion() {
+    let timerHtml = '';
+    if (timeLimit > 0) {
+      const min = Math.floor(timeLeft / 60);
+      const sec = timeLeft % 60;
+      timerHtml = `<div id="examTimer" style="font-size:1.2em;color:#2d6cdf;margin-bottom:12px;">Tiempo restante: ${min}:${sec.toString().padStart(2,'0')}</div>`;
+    }
+    mainContent.innerHTML = `
+      <h2>Simulador de Examen</h2>
+      ${timerHtml}
+      <div id="progress" style="margin-bottom:16px; font-weight:500; color:#4f8cff;">Pregunta ${currentIndex + 1} de ${questions.length}</div>
+      <form id="examForm" tabindex="0"></form>
+      <div style="margin-top:18px; display:flex; gap:10px;">
+        <button id="prevExamBtn" ${currentIndex === 0 ? 'disabled' : ''}>Anterior</button>
+        <button id="nextExamBtn" ${currentIndex === questions.length - 1 ? 'disabled' : ''}>Siguiente</button>
+        <button id="skipExamBtn" type="button">Saltar</button>
+        <button id="finishExamBtn" type="button">Finalizar</button>
+        <button id="submitExamBtn" style="display:${currentIndex === questions.length - 1 ? 'inline-block' : 'none'};">Enviar examen</button>
+      </div>
+      <div id="examResult" class="result"></div>
+    `;
+    const examForm = document.getElementById("examForm");
+    const q = questions[currentIndex];
+    let optionsHtml = '';
+    (q.options || q.opciones).forEach((opt, i) => {
+      optionsHtml += `
+        <label tabindex="0">
+          <input type="radio" name="q${currentIndex}" value="${i}" ${userAnswers[currentIndex] === i ? 'checked' : ''}>
+          ${opt}
+        </label><br>
+      `;
+    });
+    examForm.innerHTML = `<div class="question"><p>${q.question || q.pregunta}</p>${optionsHtml}</div>`;
+    examForm.onkeydown = function(e) {
+      if (e.key >= '1' && e.key <= String((q.options || q.opciones).length)) {
+        const idx = Number(e.key) - 1;
+        const radios = examForm.querySelectorAll('input[type="radio"]');
+        if (radios[idx]) {
+          radios[idx].checked = true;
+          userAnswers[currentIndex] = idx;
+        }
+      }
+    };
+    examForm.querySelectorAll('input[type="radio"]').forEach((radio, idx) => {
+      radio.onchange = () => {
+        userAnswers[currentIndex] = idx;
+      };
+    });
+    document.getElementById("prevExamBtn").onclick = () => {
+      if (currentIndex > 0) { currentIndex--; renderExamQuestion(); }
+    };
+    document.getElementById("nextExamBtn").onclick = () => {
+      // Validate that an option is selected before moving to next
+      if (userAnswers[currentIndex] === null) {
+        const resultDiv = document.getElementById("examResult");
+        resultDiv.textContent = "Por favor selecciona una opción antes de continuar.";
+        resultDiv.style.color = "#ff4136";
+        return;
+      }
+      if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        renderExamQuestion();
+      }
+    };
+    document.getElementById("skipExamBtn").onclick = () => {
+      userAnswers[currentIndex] = null;
+      if (currentIndex < questions.length - 1) { currentIndex++; renderExamQuestion(); }
+    };
+    document.getElementById("finishExamBtn").onclick = () => {
+      finishExam();
+    };
+    document.getElementById("submitExamBtn").onclick = function(e) {
+      e.preventDefault();
+      finishExam();
+    };
+  }
+
+  function finishExam() {
+    let correct = 0;
+    questions.forEach((q, i) => {
+      const ans = userAnswers[i];
+      if (ans !== null && ((q.answer !== undefined && ans === q.answer) || (q.respuesta !== undefined && (q.opciones ? q.opciones[ans] : q.options[ans]) === q.respuesta))) {
+        correct++;
+      }
+    });
+    const total = questions.length;
+    const durationSec = Math.floor((Date.now() - startTime) / 1000);
+    const min = Math.floor(durationSec / 60);
+    const sec = durationSec % 60;
+    const durationStr = `${min}:${sec.toString().padStart(2,'0')}`;
+    // Save score
+    let scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
+    scores.push({ correct, total, duration: durationStr, date: new Date().toISOString() });
+    localStorage.setItem('examSimScores', JSON.stringify(scores));
+    // Show result with wrong answers and explanations
+    let reviewHtml = '';
+    questions.forEach((q, i) => {
+      const ans = userAnswers[i];
+      const isCorrect = ans !== null && ((q.answer !== undefined && ans === q.answer) || (q.respuesta !== undefined && (q.opciones ? q.opciones[ans] : q.options[ans]) === q.respuesta));
+      if (!isCorrect) {
+        let correctText = '';
+        if (q.answer !== undefined) {
+          correctText = (q.options || q.opciones)[q.answer];
+        } else if (q.respuesta !== undefined) {
+          correctText = q.respuesta;
+        }
+        let explanation = q.explanation || q.explicacion || '';
+        reviewHtml += `<div style="background:#ffeaea;border-radius:8px;padding:12px;margin-bottom:12px;">
+          <strong>Pregunta ${i+1}:</strong> ${(q.question || q.pregunta)}<br>
+          <span style="color:#ff4136;">Tu respuesta: ${ans !== null ? (q.options || q.opciones)[ans] : 'Sin responder'}</span><br>
+          <span style="color:#2d6cdf;">Respuesta correcta: ${correctText}</span><br>
+          ${explanation ? `<div style='margin-top:6px;'><em>Explicación:</em> ${explanation}</div>` : ''}
+        </div>`;
+      }
+    });
+    mainContent.innerHTML = `<h2>Resultado del Examen</h2>
+      <div style="font-size:1.3em;color:#2d6cdf;margin-bottom:18px;">${correct} de ${total} correctas</div>
+      <div>Duración: ${durationStr}</div>
+      <div>Fecha y Hora: ${new Date().toLocaleString()}</div>
+      <button id="volverSimBtn" style="margin-top:24px;background:#4f8cff;color:#fff;padding:12px 32px;border:none;border-radius:8px;font-size:1em;cursor:pointer;">Volver al Simulador</button>
+      <div style='margin-top:32px;'>
+        <h3 style='color:#ff4136;'>Respuestas incorrectas y explicaciones</h3>
+        ${reviewHtml || '<div style=\'color:#2d6cdf;\'>¡Todas las respuestas son correctas!</div>'}
+      </div>
+    `;
+    document.getElementById("volverSimBtn").onclick = () => {
+      renderExamSimConfig(mainContent, modules);
+    };
+  }
+
+  // Timer logic
+  if (timeLimit > 0) {
+    timerId = setInterval(() => {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(timerId);
+        finishExam();
+      } else {
+        const timerDiv = document.getElementById("examTimer");
+        if (timerDiv) {
+          const min = Math.floor(timeLeft / 60);
+          const sec = timeLeft % 60;
+          timerDiv.textContent = `Tiempo restante: ${min}:${sec.toString().padStart(2,'0')}`;
+        }
+      }
+    }, 1000);
+  }
+  renderExamQuestion();
 }
