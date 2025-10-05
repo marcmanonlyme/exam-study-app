@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué servicio permite asignar direcciones IP automáticamente en una red?",
+    "options": ["DNS", "DHCP", "FTP", "HTTP"],
+    "answer": 1,
+    "explanation": "DHCP asigna direcciones IP dinámicas a dispositivos conectados a la red."
+  }
+  // ...continúa el archivo original...
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué es la arquitectura de software?",
+    "options": ["El diseño gráfico de una aplicación", "La estructura organizacional del equipo de desarrollo", "La estructura fundamental de un sistema software", "El conjunto de pruebas aplicadas al software"],
+    "answer": 2,
+    "explanation": "La arquitectura de software define la estructura fundamental del sistema, sus componentes y relaciones."
+  }
+  // ...continúa el archivo original...
+]

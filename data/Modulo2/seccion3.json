@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué tipo de documentación explica cómo usar el sistema desde el punto de vista del usuario?",
+    "options": ["Diseño técnico", "Manual de usuario", "Plan de pruebas", "Especificación de requisitos"],
+    "answer": 1,
+    "explanation": "El manual de usuario proporciona instrucciones claras para operar el sistema desde una perspectiva funcional."
+  }
+  // ...continúa el archivo original...
+]

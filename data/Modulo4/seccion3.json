@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué comando en Linux se usa para ver los últimos mensajes del sistema?",
+    "options": ["dmesg", "syslog", "logview", "tail"],
+    "answer": 0,
+    "explanation": "dmesg muestra mensajes del kernel relacionados con el arranque y hardware."
+  }
+  // ...continúa el archivo original...
+]

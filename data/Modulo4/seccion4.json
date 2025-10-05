@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué técnica permite recuperar archivos eliminados accidentalmente?",
+    "options": ["Backup", "Restore", "Reciclaje", "Rescate"],
+    "answer": 1,
+    "explanation": "Restore permite recuperar archivos desde una copia de seguridad previa."
+  }
+  // ...continúa el archivo original...
+]

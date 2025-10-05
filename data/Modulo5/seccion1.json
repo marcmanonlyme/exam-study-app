@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué lenguaje se usa comúnmente para estructurar contenido en páginas web?",
+    "options": ["CSS", "JavaScript", "HTML", "PHP"],
+    "answer": 2,
+    "explanation": "HTML (HyperText Markup Language) define la estructura y el contenido de las páginas web."
+  }
+  // ...continúa el archivo original...
+]

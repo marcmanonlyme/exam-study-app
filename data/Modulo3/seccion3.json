@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué cláusula SQL se usa para agrupar resultados según una columna?",
+    "options": ["ORDER BY", "GROUP BY", "HAVING", "WHERE"],
+    "answer": 1,
+    "explanation": "GROUP BY agrupa filas que tienen el mismo valor en una columna para aplicar funciones agregadas."
+  }
+  // ...continúa el archivo original...
+]

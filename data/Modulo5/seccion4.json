@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué atributo HTML permite navegar por teclado entre elementos interactivos?",
+    "options": ["accesskey", "tabindex", "role", "aria-label"],
+    "answer": 1,
+    "explanation": "tabindex define el orden de navegación por teclado entre elementos interactivos."
+  }
+  // ...continúa el archivo original...
+]

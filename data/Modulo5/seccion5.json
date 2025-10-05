@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué práctica recomienda escribir código fácil de leer y mantener?",
+    "options": ["Obfuscación", "Minificación", "Refactorización", "Documentación"],
+    "answer": 2,
+    "explanation": "La refactorización mejora la estructura interna del código sin cambiar su comportamiento externo."
+  }
+  // ...continúa el archivo original...
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué sistema de control de versiones permite gestionar cambios en el código fuente?",
+    "options": ["Git", "Jenkins", "Docker", "Node.js"],
+    "answer": 0,
+    "explanation": "Git permite registrar, comparar y fusionar cambios en proyectos de software colaborativos."
+  }
+  // ...continúa el archivo original...
+]

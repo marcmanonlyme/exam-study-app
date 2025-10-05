@@ -1,0 +1,9 @@
+[
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que el sistema cumple con los requisitos funcionales?",
+    "options": ["Prueba de integración", "Prueba de validación", "Prueba de carga", "Prueba de unidad"],
+    "answer": 1,
+    "explanation": "La validación asegura que el sistema cumple con los requisitos funcionales definidos por el usuario."
+  }
+  // ...continúa el archivo original...
+]

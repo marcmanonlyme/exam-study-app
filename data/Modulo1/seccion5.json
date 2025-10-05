@@ -1,0 +1,45 @@
+[
+  {
+    "question": "¿Qué estructura de datos se usa para implementar el recorrido en profundidad (DFS)?",
+    "options": ["Cola", "Pila", "Lista", "Árbol"],
+    "answer": 1,
+    "explanation": "El recorrido en profundidad (DFS) utiliza una pila para explorar nodos antes de retroceder."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que el sistema cumple con los requisitos no funcionales?",
+    "options": ["Prueba de validación", "Prueba de carga", "Prueba de aceptación", "Prueba de integración"],
+    "answer": 1,
+    "explanation": "Las pruebas de carga y rendimiento evalúan requisitos no funcionales como velocidad, escalabilidad y estabilidad."
+  },
+  {
+    "question": "¿Qué técnica permite definir una interfaz común para múltiples clases con comportamientos distintos?",
+    "options": ["Herencia", "Encapsulamiento", "Polimorfismo", "Abstracción"],
+    "answer": 2,
+    "explanation": "El polimorfismo permite que diferentes clases respondan de manera distinta a la misma interfaz o método."
+  },
+  {
+    "question": "¿Qué tipo de mantenimiento se realiza para agregar nuevas funcionalidades?",
+    "options": ["Correctivo", "Adaptativo", "Perfectivo", "Preventivo"],
+    "answer": 2,
+    "explanation": "El mantenimiento perfectivo busca mejorar el sistema agregando nuevas funciones o mejorando las existentes."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que el sistema cumple con lo que el usuario espera?",
+    "options": ["Prueba de unidad", "Prueba de integración", "Prueba de validación", "Prueba de regresión"],
+    "answer": 2,
+    "explanation": "La validación asegura que el sistema cumple con los requisitos funcionales definidos por el usuario."
+  },
+  {
+    "question": "¿Qué estructura de datos permite representar relaciones jerárquicas como árboles genealógicos?",
+    "options": ["Lista", "Cola", "Árbol", "Grafo"],
+    "answer": 2,
+    "explanation": "Los árboles permiten representar relaciones jerárquicas como padre-hijo, ideales para estructuras como genealogías."
+  },
+  {
+    "question": "¿Qué modelo de desarrollo enfatiza la gestión de riesgos en cada iteración?",
+    "options": ["Cascada", "Incremental", "Ágil", "Espiral"],
+    "answer": 3,
+    "explanation": "El modelo espiral incorpora análisis de riesgos en cada ciclo, ideal para proyectos complejos y cambiantes."
+  }
+  // ...continúa el archivo original...
+]

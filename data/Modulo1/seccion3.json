@@ -1,0 +1,45 @@
+[
+  {
+    "question": "¿Qué tipo de prueba se enfoca en verificar que el sistema completo funciona como se espera?",
+    "options": ["Prueba de unidad", "Prueba de integración", "Prueba de sistema", "Prueba de regresión"],
+    "answer": 2,
+    "explanation": "La prueba de sistema valida el comportamiento del software como un todo, incluyendo todos los componentes integrados."
+  },
+  {
+    "question": "¿Qué tipo de mantenimiento se realiza para corregir errores detectados en el software?",
+    "options": ["Perfectivo", "Adaptativo", "Correctivo", "Preventivo"],
+    "answer": 2,
+    "explanation": "El mantenimiento correctivo se aplica para solucionar fallos o errores que afectan el funcionamiento del sistema."
+  },
+  {
+    "question": "¿Qué estructura de datos es más adecuada para implementar una función de deshacer en una aplicación?",
+    "options": ["Cola", "Pila", "Lista", "Árbol"],
+    "answer": 1,
+    "explanation": "La pila permite almacenar acciones en orden LIFO, ideal para funciones de deshacer."
+  },
+  {
+    "question": "¿Qué modelo de desarrollo permite retroalimentación continua y adaptación a cambios frecuentes?",
+    "options": ["Cascada", "Ágil", "Prototipos", "Incremental"],
+    "answer": 1,
+    "explanation": "Ágil se basa en iteraciones cortas, retroalimentación constante y adaptación a cambios."
+  },
+  {
+    "question": "¿Qué principio SOLID establece que los objetos deben depender de abstracciones y no de clases concretas?",
+    "options": ["Open/Closed", "Single Responsibility", "Dependency Inversion", "Interface Segregation"],
+    "answer": 2,
+    "explanation": "La inversión de dependencias promueve el uso de interfaces y abstracciones para reducir el acoplamiento."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que el sistema cumple con los requisitos del cliente?",
+    "options": ["Prueba de sistema", "Prueba de aceptación", "Prueba de integración", "Prueba unitaria"],
+    "answer": 1,
+    "explanation": "La prueba de aceptación se realiza con el cliente para validar que el sistema cumple con sus expectativas."
+  },
+  {
+    "question": "¿Qué estructura de datos se utiliza para representar expresiones matemáticas en compiladores?",
+    "options": ["Lista", "Árbol binario", "Cola", "Pila"],
+    "answer": 1,
+    "explanation": "El árbol binario permite representar expresiones matemáticas y operaciones en compiladores."
+  }
+  // ...continúa el archivo original...
+]
