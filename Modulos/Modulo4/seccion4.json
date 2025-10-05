@@ -1,0 +1,122 @@
+[
+  {
+    "question": "¿Qué técnica permite recuperar archivos eliminados accidentalmente?",
+    "options": ["Backup", "Restore", "Reciclaje", "Rescate"],
+    "answer": 1,
+    "explanation": "Restore permite recuperar archivos desde una copia de seguridad previa."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para crear una copia comprimida de archivos?",
+    "options": ["tar", "zip", "gzip", "compress"],
+    "answer": 0,
+    "explanation": "tar permite agrupar archivos en un solo paquete, que puede ser comprimido con gzip."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para descomprimir archivos .gz?",
+    "options": ["gunzip", "unzip", "untar", "extract"],
+    "answer": 0,
+    "explanation": "gunzip descomprime archivos con extensión .gz generados por gzip."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para descomprimir archivos .zip?",
+    "options": ["unzip", "gunzip", "tar -x", "extract"],
+    "answer": 0,
+    "explanation": "unzip extrae el contenido de archivos comprimidos en formato .zip."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para comprimir archivos en formato .zip?",
+    "options": ["zip", "gzip", "tar", "compress"],
+    "answer": 0,
+    "explanation": "zip crea archivos comprimidos en formato .zip."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para crear un archivo tar comprimido con gzip?",
+    "options": ["tar -czf", "zip -gz", "gzip -tar", "compress -t"],
+    "answer": 0,
+    "explanation": "tar -czf crea un archivo tar y lo comprime usando gzip en un solo paso."
+  },
+  {
+    "question": "¿Qué técnica permite ejecutar múltiples sistemas operativos en un mismo hardware?",
+    "options": ["Multiproceso", "Virtualización", "Contenedores", "Multitarea"],
+    "answer": 1,
+    "explanation": "La virtualización permite ejecutar varios sistemas operativos aislados en una misma máquina física."
+  },
+  {
+    "question": "¿Qué software permite crear máquinas virtuales en Linux?",
+    "options": ["Docker", "VirtualBox", "VMware", "QEMU"],
+    "answer": 3,
+    "explanation": "QEMU es una herramienta de virtualización que permite emular sistemas completos en Linux."
+  },
+  {
+    "question": "¿Qué herramienta permite administrar contenedores en Linux?",
+    "options": ["VirtualBox", "Docker", "QEMU", "VMware"],
+    "answer": 1,
+    "explanation": "Docker permite crear, ejecutar y administrar contenedores ligeros y portables."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para iniciar un contenedor Docker?",
+    "options": ["docker start", "docker run", "docker init", "docker exec"],
+    "answer": 1,
+    "explanation": "docker run crea e inicia un contenedor a partir de una imagen."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para listar contenedores activos en Docker?",
+    "options": ["docker ps", "docker list", "docker show", "docker status"],
+    "answer": 0,
+    "explanation": "docker ps muestra los contenedores activos y sus detalles."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para detener un contenedor Docker?",
+    "options": ["docker stop", "docker kill", "docker end", "docker close"],
+    "answer": 0,
+    "explanation": "docker stop detiene un contenedor de forma ordenada."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para eliminar un contenedor Docker?",
+    "options": ["docker rm", "docker delete", "docker remove", "docker clean"],
+    "answer": 0,
+    "explanation": "docker rm elimina un contenedor detenido del sistema."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver las imágenes disponibles en Docker?",
+    "options": ["docker images", "docker list", "docker show", "docker catalog"],
+    "answer": 0,
+    "explanation": "docker images muestra las imágenes locales disponibles para crear contenedores."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para eliminar una imagen de Docker?",
+    "options": ["docker rmi", "docker delete", "docker remove", "docker clean"],
+    "answer": 0,
+    "explanation": "docker rmi elimina una imagen del repositorio local de Docker."
+  },
+  {
+    "question": "¿Qué servicio permite asignar nombres de dominio a direcciones IP?",
+    "options": ["DHCP", "DNS", "FTP", "HTTP"],
+    "answer": 1,
+    "explanation": "DNS traduce nombres de dominio en direcciones IP para facilitar la navegación."
+  },
+  {
+    "question": "¿Qué servicio permite compartir archivos en red entre sistemas Windows y Linux?",
+    "options": ["FTP", "NFS", "Samba", "SSH"],
+    "answer": 2,
+    "explanation": "Samba permite compartir archivos e impresoras entre sistemas Windows y Linux usando el protocolo SMB."
+  },
+  {
+    "question": "¿Qué servicio permite montar sistemas de archivos remotos en Linux?",
+    "options": ["FTP", "NFS", "Samba", "SSHFS"],
+    "answer": 1,
+    "explanation": "NFS (Network File System) permite montar directorios remotos como si fueran locales."
+  },
+  {
+    "question": "¿Qué servicio permite acceder a archivos remotos mediante SSH?",
+    "options": ["FTP", "NFS", "Samba", "SSHFS"],
+    "answer": 3,
+    "explanation": "SSHFS permite montar sistemas de archivos remotos usando el protocolo SSH."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para montar un sistema de archivos?",
+    "options": ["mount", "attach", "connect", "link"],
+    "answer": 0,
+    "explanation": "mount permite conectar un sistema de archivos externo al árbol de directorios local."
+  }
+]

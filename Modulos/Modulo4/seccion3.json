@@ -1,0 +1,122 @@
+[
+  {
+    "question": "¿Qué comando en Linux se usa para ver los últimos mensajes del sistema?",
+    "options": ["dmesg", "syslog", "logview", "tail"],
+    "answer": 0,
+    "explanation": "dmesg muestra mensajes del kernel relacionados con el arranque y hardware."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver los últimos registros de un archivo de log?",
+    "options": ["head", "tail", "cat", "less"],
+    "answer": 1,
+    "explanation": "tail muestra las últimas líneas de un archivo, útil para monitorear logs en tiempo real."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para buscar texto dentro de archivos?",
+    "options": ["find", "grep", "search", "scan"],
+    "answer": 1,
+    "explanation": "grep busca patrones de texto dentro de archivos, útil para análisis de registros."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para encontrar archivos por nombre?",
+    "options": ["grep", "locate", "search", "scan"],
+    "answer": 1,
+    "explanation": "locate busca archivos por nombre utilizando una base de datos actualizada."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para actualizar la base de datos de archivos?",
+    "options": ["updatedb", "refresh", "index", "locate -u"],
+    "answer": 0,
+    "explanation": "updatedb actualiza la base de datos usada por locate para búsquedas rápidas."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver el uso de CPU y memoria en tiempo real?",
+    "options": ["top", "ps", "free", "uptime"],
+    "answer": 0,
+    "explanation": "top muestra procesos activos y uso de recursos en tiempo real."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver cuánto tiempo lleva encendido el sistema?",
+    "options": ["uptime", "top", "who", "time"],
+    "answer": 0,
+    "explanation": "uptime muestra el tiempo que el sistema ha estado activo desde el último arranque."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver qué usuarios están conectados?",
+    "options": ["who", "users", "w", "login"],
+    "answer": 0,
+    "explanation": "who muestra los usuarios conectados actualmente al sistema."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver información detallada de los usuarios conectados?",
+    "options": ["who", "w", "users", "id"],
+    "answer": 1,
+    "explanation": "w muestra quién está conectado y qué está haciendo cada usuario."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver el identificador de usuario actual?",
+    "options": ["whoami", "id", "user", "me"],
+    "answer": 0,
+    "explanation": "whoami muestra el nombre del usuario actual en la sesión."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver el ID numérico del usuario?",
+    "options": ["id", "whoami", "uid", "user"],
+    "answer": 0,
+    "explanation": "id muestra el UID, GID y grupos asociados al usuario actual."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para cambiar la contraseña de un usuario?",
+    "options": ["passwd", "chpass", "setpass", "changepw"],
+    "answer": 0,
+    "explanation": "passwd permite cambiar la contraseña del usuario actual o de otro usuario autorizado."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para agregar un nuevo usuario?",
+    "options": ["adduser", "useradd", "newuser", "createuser"],
+    "answer": 1,
+    "explanation": "useradd crea un nuevo usuario en el sistema con opciones personalizadas."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para eliminar un usuario?",
+    "options": ["deluser", "userdel", "removeuser", "deleteuser"],
+    "answer": 1,
+    "explanation": "userdel elimina un usuario del sistema y puede borrar su directorio personal."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para cambiar el grupo principal de un usuario?",
+    "options": ["usermod", "groupmod", "chgrp", "setgroup"],
+    "answer": 0,
+    "explanation": "usermod permite modificar atributos de un usuario, incluyendo su grupo principal."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver los grupos a los que pertenece un usuario?",
+    "options": ["groups", "id", "whoami", "getent"],
+    "answer": 0,
+    "explanation": "groups muestra los grupos asociados al usuario actual o especificado."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para crear un nuevo grupo?",
+    "options": ["groupadd", "addgroup", "newgroup", "creategroup"],
+    "answer": 0,
+    "explanation": "groupadd crea un nuevo grupo en el sistema."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para eliminar un grupo?",
+    "options": ["groupdel", "delgroup", "removegroup", "deletegroup"],
+    "answer": 0,
+    "explanation": "groupdel elimina un grupo del sistema."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para cambiar el nombre de un grupo?",
+    "options": ["groupmod", "renamegroup", "chgroup", "modgroup"],
+    "answer": 0,
+    "explanation": "groupmod permite modificar atributos de un grupo, incluyendo su nombre."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver todos los grupos del sistema?",
+    "options": ["getent group", "groups", "cat /etc/group", "listgroups"],
+    "answer": 2,
+    "explanation": "cat /etc/group muestra todos los grupos definidos en el sistema."
+  }
+]

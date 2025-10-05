@@ -1,0 +1,122 @@
+[
+  {
+    "question": "¿Qué sistema de control de versiones permite gestionar cambios en el código fuente?",
+    "options": ["Git", "Jenkins", "Docker", "Node.js"],
+    "answer": 0,
+    "explanation": "Git permite registrar, comparar y fusionar cambios en proyectos de software colaborativos."
+  },
+  {
+    "question": "¿Qué plataforma permite alojar repositorios Git y colaborar en proyectos?",
+    "options": ["GitHub", "Jenkins", "Docker Hub", "Postman"],
+    "answer": 0,
+    "explanation": "GitHub permite almacenar repositorios Git, gestionar ramas y colaborar mediante pull requests."
+  },
+  {
+    "question": "¿Qué comando se usa para clonar un repositorio Git?",
+    "options": ["git clone", "git pull", "git copy", "git fetch"],
+    "answer": 0,
+    "explanation": "git clone descarga una copia completa de un repositorio remoto."
+  },
+  {
+    "question": "¿Qué comando se usa para registrar cambios en Git?",
+    "options": ["git push", "git commit", "git save", "git update"],
+    "answer": 1,
+    "explanation": "git commit guarda los cambios en el historial local del repositorio."
+  },
+  {
+    "question": "¿Qué comando se usa para enviar cambios al repositorio remoto en Git?",
+    "options": ["git push", "git commit", "git upload", "git sync"],
+    "answer": 0,
+    "explanation": "git push envía los cambios locales al repositorio remoto."
+  },
+  {
+    "question": "¿Qué comando se usa para obtener los últimos cambios desde el repositorio remoto?",
+    "options": ["git pull", "git fetch", "git clone", "git sync"],
+    "answer": 0,
+    "explanation": "git pull descarga y fusiona los cambios del repositorio remoto en la rama actual."
+  },
+  {
+    "question": "¿Qué herramienta permite automatizar pruebas, compilación y despliegue continuo?",
+    "options": ["Git", "Docker", "Jenkins", "Node.js"],
+    "answer": 2,
+    "explanation": "Jenkins permite configurar pipelines para automatizar tareas de desarrollo y entrega continua."
+  },
+  {
+    "question": "¿Qué archivo define los pasos de un pipeline en Jenkins?",
+    "options": ["Jenkinsfile", "pipeline.yml", "build.json", "deploy.yaml"],
+    "answer": 0,
+    "explanation": "Jenkinsfile contiene las instrucciones para ejecutar un pipeline de integración y entrega continua."
+  },
+  {
+    "question": "¿Qué tipo de prueba evalúa el rendimiento del sistema bajo carga?",
+    "options": ["Prueba de regresión", "Prueba de integración", "Prueba de carga", "Prueba unitaria"],
+    "answer": 2,
+    "explanation": "La prueba de carga mide cómo responde el sistema ante múltiples usuarios o solicitudes simultáneas."
+  },
+  {
+    "question": "¿Qué tipo de prueba evalúa el comportamiento del sistema en condiciones extremas?",
+    "options": ["Prueba de estrés", "Prueba de aceptación", "Prueba de integración", "Prueba de sistema"],
+    "answer": 0,
+    "explanation": "La prueba de estrés somete al sistema a condiciones límite para detectar fallos o cuellos de botella."
+  },
+  {
+    "question": "¿Qué herramienta permite realizar pruebas de carga en servicios web?",
+    "options": ["JMeter", "Postman", "Jest", "Git"],
+    "answer": 0,
+    "explanation": "Apache JMeter simula múltiples usuarios para evaluar el rendimiento de aplicaciones web."
+  },
+  {
+    "question": "¿Qué técnica de seguridad evita que usuarios maliciosos inyecten código en formularios?",
+    "options": ["Cifrado", "Validación de entradas", "Firewall", "Autenticación"],
+    "answer": 1,
+    "explanation": "La validación de entradas evita que se ejecuten comandos maliciosos enviados por el usuario."
+  },
+  {
+    "question": "¿Qué tipo de ataque consiste en insertar código malicioso en campos de entrada?",
+    "options": ["Phishing", "XSS", "DoS", "Man-in-the-middle"],
+    "answer": 1,
+    "explanation": "XSS (Cross-Site Scripting) permite ejecutar scripts maliciosos en el navegador de otros usuarios."
+  },
+  {
+    "question": "¿Qué cabecera HTTP ayuda a prevenir ataques XSS?",
+    "options": ["Content-Type", "X-Frame-Options", "Content-Security-Policy", "Authorization"],
+    "answer": 2,
+    "explanation": "Content-Security-Policy restringe qué scripts pueden ejecutarse en la página."
+  },
+  {
+    "question": "¿Qué técnica permite proteger contraseñas almacenadas en servidores?",
+    "options": ["Cifrado simétrico", "Hashing", "Compresión", "Codificación"],
+    "answer": 1,
+    "explanation": "El hashing convierte contraseñas en valores irreversibles para protegerlas en almacenamiento."
+  },
+  {
+    "question": "¿Qué algoritmo de hashing es comúnmente usado para contraseñas?",
+    "options": ["MD5", "SHA-256", "AES", "RSA"],
+    "answer": 1,
+    "explanation": "SHA-256 es un algoritmo seguro y ampliamente usado para proteger contraseñas mediante hashing."
+  },
+  {
+    "question": "¿Qué técnica permite verificar la identidad de un usuario?",
+    "options": ["Autenticación", "Autorización", "Cifrado", "Firewall"],
+    "answer": 0,
+    "explanation": "La autenticación valida que el usuario es quien dice ser mediante credenciales."
+  },
+  {
+    "question": "¿Qué técnica permite controlar qué recursos puede usar un usuario autenticado?",
+    "options": ["Autenticación", "Autorización", "Cifrado", "Hashing"],
+    "answer": 1,
+    "explanation": "La autorización define qué acciones o recursos están permitidos para un usuario autenticado."
+  },
+  {
+    "question": "¿Qué atributo HTML mejora la accesibilidad al describir imágenes?",
+    "options": ["alt", "title", "src", "description"],
+    "answer": 0,
+    "explanation": "El atributo alt proporciona una descripción textual de la imagen para lectores de pantalla."
+  },
+  {
+    "question": "¿Qué etiqueta HTML se usa para agrupar contenido principal de una página?",
+    "options": ["<main>", "<section>", "<article>", "<body>"],
+    "answer": 0,
+    "explanation": "<main> indica el contenido principal de una página, útil para accesibilidad y estructura semántica."
+  }
+]

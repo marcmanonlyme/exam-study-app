@@ -1,0 +1,122 @@
+[
+  {
+    "question": "¿Qué es la arquitectura de software?",
+    "options": ["El diseño gráfico de una aplicación", "La estructura organizacional del equipo de desarrollo", "La estructura fundamental de un sistema software", "El conjunto de pruebas aplicadas al software"],
+    "answer": 2,
+    "explanation": "La arquitectura de software define la estructura fundamental del sistema, sus componentes y relaciones."
+  },
+  {
+    "question": "¿Qué patrón arquitectónico divide el sistema en capas funcionales?",
+    "options": ["Cliente-servidor", "Microservicios", "MVC", "Arquitectura en capas"],
+    "answer": 3,
+    "explanation": "La arquitectura en capas organiza el sistema en niveles como presentación, lógica de negocio y acceso a datos."
+  },
+  {
+    "question": "¿Qué patrón arquitectónico promueve componentes independientes que se comunican por mensajes?",
+    "options": ["Monolítico", "Microservicios", "MVC", "Pipe and Filter"],
+    "answer": 1,
+    "explanation": "La arquitectura de microservicios divide el sistema en servicios independientes que se comunican por APIs."
+  },
+  {
+    "question": "¿Qué métrica de calidad mide la facilidad para modificar el software?",
+    "options": ["Fiabilidad", "Mantenibilidad", "Portabilidad", "Usabilidad"],
+    "answer": 1,
+    "explanation": "La mantenibilidad evalúa qué tan fácil es modificar, corregir o mejorar el software."
+  },
+  {
+    "question": "¿Qué métrica evalúa la capacidad del software para resistir fallos?",
+    "options": ["Fiabilidad", "Usabilidad", "Eficiencia", "Portabilidad"],
+    "answer": 0,
+    "explanation": "La fiabilidad mide la capacidad del software para funcionar correctamente bajo condiciones específicas."
+  },
+  {
+    "question": "¿Qué norma define características de calidad del producto software?",
+    "options": ["ISO/IEC 12207", "IEEE 830", "ISO/IEC 25010", "IEEE 1012"],
+    "answer": 2,
+    "explanation": "La norma ISO/IEC 25010 establece un modelo de calidad con características como fiabilidad, usabilidad y seguridad."
+  },
+  {
+    "question": "¿Qué técnica se usa para identificar amenazas y vulnerabilidades en un sistema?",
+    "options": ["Pruebas unitarias", "Modelado de amenazas", "Refactorización", "Integración continua"],
+    "answer": 1,
+    "explanation": "El modelado de amenazas permite identificar y analizar posibles riesgos de seguridad en el sistema."
+  },
+  {
+    "question": "¿Qué principio de seguridad implica limitar el acceso solo a lo necesario?",
+    "options": ["Autenticación", "Confidencialidad", "Principio de mínimo privilegio", "Disponibilidad"],
+    "answer": 2,
+    "explanation": "El principio de mínimo privilegio indica que cada usuario o proceso debe tener solo los permisos necesarios."
+  },
+  {
+    "question": "¿Qué técnica se usa para verificar la identidad de un usuario?",
+    "options": ["Autorización", "Cifrado", "Autenticación", "Firewall"],
+    "answer": 2,
+    "explanation": "La autenticación verifica que el usuario es quien dice ser, mediante credenciales como contraseñas o biometría."
+  },
+  {
+    "question": "¿Qué técnica protege la información para que solo pueda ser leída por usuarios autorizados?",
+    "options": ["Autenticación", "Cifrado", "Firewall", "Hashing"],
+    "answer": 1,
+    "explanation": "El cifrado transforma la información en un formato ilegible sin la clave adecuada."
+  },
+  {
+    "question": "¿Qué documento describe lo que el sistema debe hacer?",
+    "options": ["Manual de usuario", "Plan de pruebas", "Especificación de requisitos", "Diseño técnico"],
+    "answer": 2,
+    "explanation": "La especificación de requisitos define las funcionalidades y restricciones del sistema."
+  },
+  {
+    "question": "¿Qué tipo de requisito describe cómo debe comportarse el sistema?",
+    "options": ["Funcional", "No funcional", "De diseño", "De implementación"],
+    "answer": 0,
+    "explanation": "Los requisitos funcionales describen las acciones que el sistema debe realizar."
+  },
+  {
+    "question": "¿Qué tipo de requisito incluye rendimiento, seguridad y usabilidad?",
+    "options": ["Funcional", "No funcional", "De usuario", "De negocio"],
+    "answer": 1,
+    "explanation": "Los requisitos no funcionales definen atributos de calidad como rendimiento, seguridad y usabilidad."
+  },
+  {
+    "question": "¿Qué técnica se usa para representar visualmente los requisitos del sistema?",
+    "options": ["Diagrama de flujo", "Casos de uso", "Pruebas unitarias", "Modelo de datos"],
+    "answer": 1,
+    "explanation": "Los casos de uso representan interacciones entre actores y el sistema para cumplir objetivos específicos."
+  },
+  {
+    "question": "¿Qué herramienta se usa para modelar procesos de negocio?",
+    "options": ["UML", "BPMN", "ERD", "DFD"],
+    "answer": 1,
+    "explanation": "BPMN (Business Process Model and Notation) permite modelar procesos de negocio de forma estandarizada."
+  },
+  {
+    "question": "¿Qué diagrama UML representa la estructura estática del sistema?",
+    "options": ["Diagrama de clases", "Diagrama de casos de uso", "Diagrama de secuencia", "Diagrama de estados"],
+    "answer": 0,
+    "explanation": "El diagrama de clases muestra las clases, atributos, métodos y relaciones del sistema."
+  },
+  {
+    "question": "¿Qué diagrama UML representa el comportamiento dinámico entre objetos?",
+    "options": ["Diagrama de clases", "Diagrama de casos de uso", "Diagrama de secuencia", "Diagrama de componentes"],
+    "answer": 2,
+    "explanation": "El diagrama de secuencia muestra cómo los objetos interactúan en el tiempo para cumplir una función."
+  },
+  {
+    "question": "¿Qué diagrama UML representa los estados por los que pasa un objeto?",
+    "options": ["Diagrama de clases", "Diagrama de estados", "Diagrama de casos de uso", "Diagrama de flujo"],
+    "answer": 1,
+    "explanation": "El diagrama de estados muestra los diferentes estados de un objeto y las transiciones entre ellos."
+  },
+  {
+    "question": "¿Qué técnica permite validar que los requisitos están completos y correctos?",
+    "options": ["Pruebas unitarias", "Revisión de requisitos", "Diseño técnico", "Codificación"],
+    "answer": 1,
+    "explanation": "La revisión de requisitos permite detectar errores, ambigüedades o inconsistencias antes del desarrollo."
+  },
+  {
+    "question": "¿Qué norma define procesos de validación y verificación del software?",
+    "options": ["IEEE 830", "ISO/IEC 12207", "IEEE 1012", "ISO/IEC 25010"],
+    "answer": 2,
+    "explanation": "La norma IEEE 1012 establece procesos para verificar y validar productos software en cada fase del ciclo de vida."
+  }
+]

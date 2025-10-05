@@ -1,0 +1,122 @@
+[
+  {
+    "question": "¿Qué tipo de documentación explica cómo usar el sistema desde el punto de vista del usuario?",
+    "options": ["Diseño técnico", "Manual de usuario", "Plan de pruebas", "Especificación de requisitos"],
+    "answer": 1,
+    "explanation": "El manual de usuario proporciona instrucciones claras para operar el sistema desde una perspectiva funcional."
+  },
+  {
+    "question": "¿Qué métrica evalúa el grado de reutilización de componentes en el sistema?",
+    "options": ["Cohesión", "Acoplamiento", "Reusabilidad", "Portabilidad"],
+    "answer": 2,
+    "explanation": "La reusabilidad mide qué tan fácilmente se pueden reutilizar componentes en otros contextos o sistemas."
+  },
+  {
+    "question": "¿Qué técnica se usa para asegurar que los datos no han sido alterados durante la transmisión?",
+    "options": ["Cifrado", "Autenticación", "Hashing", "Firewall"],
+    "answer": 2,
+    "explanation": "El hashing genera una huella digital que permite verificar la integridad de los datos."
+  },
+  {
+    "question": "¿Qué patrón arquitectónico se basa en un servidor central que atiende múltiples clientes?",
+    "options": ["Pipe and Filter", "Microservicios", "Cliente-servidor", "MVC"],
+    "answer": 2,
+    "explanation": "El patrón cliente-servidor organiza el sistema en clientes que solicitan servicios a un servidor central."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que el sistema cumple con los requisitos de seguridad?",
+    "options": ["Prueba de carga", "Prueba de penetración", "Prueba de regresión", "Prueba de integración"],
+    "answer": 1,
+    "explanation": "La prueba de penetración simula ataques para identificar vulnerabilidades y evaluar la seguridad del sistema."
+  },
+  {
+    "question": "¿Qué técnica permite mejorar la estructura interna del código sin cambiar su comportamiento externo?",
+    "options": ["Refactorización", "Compilación", "Prueba de unidad", "Modelado de amenazas"],
+    "answer": 0,
+    "explanation": "La refactorización mejora la legibilidad y mantenibilidad del código sin alterar su funcionalidad."
+  },
+  {
+    "question": "¿Qué herramienta permite detectar errores automáticamente al integrar cambios en el código?",
+    "options": ["Integración continua", "Refactorización", "Prueba de estrés", "Modelado de amenazas"],
+    "answer": 0,
+    "explanation": "La integración continua automatiza la construcción y prueba del software en cada cambio."
+  },
+  {
+    "question": "¿Qué tipo de requisito describe condiciones técnicas como plataforma, lenguaje o base de datos?",
+    "options": ["Funcional", "No funcional", "De implementación", "De negocio"],
+    "answer": 2,
+    "explanation": "Los requisitos de implementación especifican restricciones técnicas necesarias para desarrollar el sistema."
+  },
+  {
+    "question": "¿Qué técnica permite representar el comportamiento del sistema ante eventos externos?",
+    "options": ["Diagrama de clases", "Diagrama de estados", "Diagrama de flujo", "Diagrama de casos de uso"],
+    "answer": 1,
+    "explanation": "El diagrama de estados muestra cómo responde el sistema a eventos y transiciones entre estados."
+  },
+  {
+    "question": "¿Qué tipo de requisito describe metas organizacionales que el sistema debe apoyar?",
+    "options": ["Funcional", "No funcional", "De negocio", "De usuario"],
+    "answer": 2,
+    "explanation": "Los requisitos de negocio reflejan objetivos estratégicos que el sistema debe facilitar."
+  },
+  {
+    "question": "¿Qué técnica se usa para representar interacciones entre actores y el sistema?",
+    "options": ["Diagrama de flujo", "Diagrama de clases", "Casos de uso", "Diagrama de estados"],
+    "answer": 2,
+    "explanation": "Los casos de uso modelan cómo los actores interactúan con el sistema para lograr objetivos."
+  },
+  {
+    "question": "¿Qué norma define procesos de validación y verificación del software?",
+    "options": ["IEEE 830", "ISO/IEC 12207", "IEEE 1012", "ISO/IEC 25010"],
+    "answer": 2,
+    "explanation": "La norma IEEE 1012 establece procesos para verificar y validar productos software en cada fase del ciclo de vida."
+  },
+  {
+    "question": "¿Qué métrica evalúa la facilidad con la que el software puede ser transferido a otro entorno?",
+    "options": ["Fiabilidad", "Portabilidad", "Usabilidad", "Mantenibilidad"],
+    "answer": 1,
+    "explanation": "La portabilidad mide qué tan fácil es adaptar el software a diferentes plataformas o entornos."
+  },
+  {
+    "question": "¿Qué técnica permite identificar y analizar posibles riesgos de seguridad en el sistema?",
+    "options": ["Modelado de amenazas", "Prueba de carga", "Refactorización", "Integración continua"],
+    "answer": 0,
+    "explanation": "El modelado de amenazas ayuda a anticipar vulnerabilidades y diseñar medidas de mitigación."
+  },
+  {
+    "question": "¿Qué tipo de documentación describe los objetivos y alcance del sistema desde la perspectiva del cliente?",
+    "options": ["Diseño técnico", "Manual de usuario", "Especificación de requisitos", "Plan de pruebas"],
+    "answer": 2,
+    "explanation": "La especificación de requisitos documenta lo que el sistema debe hacer según las necesidades del cliente."
+  },
+  {
+    "question": "¿Qué métrica mide el grado en que el software cumple con los requisitos especificados?",
+    "options": ["Fiabilidad", "Eficiencia", "Conformidad", "Usabilidad"],
+    "answer": 2,
+    "explanation": "La conformidad evalúa si el software cumple con los requisitos funcionales y normativos establecidos."
+  },
+  {
+    "question": "¿Qué técnica permite representar visualmente el flujo de control en un algoritmo?",
+    "options": ["Diagrama de flujo", "Diagrama de clases", "Diagrama de estados", "Casos de uso"],
+    "answer": 0,
+    "explanation": "El diagrama de flujo muestra el orden de ejecución de instrucciones y decisiones en un algoritmo."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que los cambios no afectaron funcionalidades previas?",
+    "options": ["Prueba de regresión", "Prueba de aceptación", "Prueba de integración", "Prueba de carga"],
+    "answer": 0,
+    "explanation": "La prueba de regresión asegura que el software sigue funcionando correctamente después de cambios o correcciones."
+  },
+  {
+    "question": "¿Qué métrica evalúa la facilidad de uso del sistema por parte del usuario final?",
+    "options": ["Usabilidad", "Portabilidad", "Fiabilidad", "Mantenibilidad"],
+    "answer": 0,
+    "explanation": "La usabilidad mide qué tan fácil y eficiente es para el usuario interactuar con el sistema."
+  },
+  {
+    "question": "¿Qué tipo de requisito describe cómo debe comportarse el sistema desde la perspectiva del usuario?",
+    "options": ["Funcional", "No funcional", "De negocio", "De implementación"],
+    "answer": 0,
+    "explanation": "Los requisitos funcionales definen las acciones que el sistema debe realizar para cumplir con su propósito."
+  }
+]

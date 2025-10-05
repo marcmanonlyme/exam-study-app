@@ -1,0 +1,122 @@
+[
+  {
+    "question": "¿Qué lenguaje se usa comúnmente para estructurar contenido en páginas web?",
+    "options": ["CSS", "JavaScript", "HTML", "PHP"],
+    "answer": 2,
+    "explanation": "HTML (HyperText Markup Language) define la estructura y el contenido de las páginas web."
+  },
+  {
+    "question": "¿Qué lenguaje se usa para aplicar estilos visuales a una página web?",
+    "options": ["HTML", "JavaScript", "CSS", "SQL"],
+    "answer": 2,
+    "explanation": "CSS (Cascading Style Sheets) permite definir colores, fuentes, márgenes y diseño visual."
+  },
+  {
+    "question": "¿Qué lenguaje se usa para agregar interactividad en el navegador?",
+    "options": ["HTML", "CSS", "JavaScript", "Python"],
+    "answer": 2,
+    "explanation": "JavaScript permite crear interacciones dinámicas como formularios, animaciones y validaciones."
+  },
+  {
+    "question": "¿Qué etiqueta HTML se usa para crear un enlace?",
+    "options": ["<link>", "<a>", "<href>", "<url>"],
+    "answer": 1,
+    "explanation": "La etiqueta <a> crea enlaces a otras páginas o recursos."
+  },
+  {
+    "question": "¿Qué etiqueta HTML se usa para insertar una imagen?",
+    "options": ["<img>", "<image>", "<src>", "<pic>"],
+    "answer": 0,
+    "explanation": "La etiqueta <img> permite mostrar imágenes en una página web."
+  },
+  {
+    "question": "¿Qué propiedad CSS se usa para cambiar el color del texto?",
+    "options": ["background-color", "font-color", "text-color", "color"],
+    "answer": 3,
+    "explanation": "La propiedad color define el color del texto en CSS."
+  },
+  {
+    "question": "¿Qué propiedad CSS se usa para cambiar el tamaño de fuente?",
+    "options": ["font-size", "text-size", "size", "font"],
+    "answer": 0,
+    "explanation": "font-size ajusta el tamaño del texto en CSS."
+  },
+  {
+    "question": "¿Qué propiedad CSS se usa para aplicar márgenes externos?",
+    "options": ["padding", "margin", "border", "spacing"],
+    "answer": 1,
+    "explanation": "margin define el espacio externo entre elementos."
+  },
+  {
+    "question": "¿Qué propiedad CSS se usa para aplicar espacio interno dentro de un elemento?",
+    "options": ["margin", "padding", "border", "spacing"],
+    "answer": 1,
+    "explanation": "padding define el espacio interno entre el contenido y el borde del elemento."
+  },
+  {
+    "question": "¿Qué método JavaScript se usa para acceder a un elemento por su ID?",
+    "options": ["getElementByClass", "getElementById", "querySelectorAll", "getId"],
+    "answer": 1,
+    "explanation": "getElementById permite acceder a un elemento HTML usando su atributo id."
+  },
+  {
+    "question": "¿Qué evento JavaScript se dispara al hacer clic en un elemento?",
+    "options": ["onhover", "onload", "onclick", "onchange"],
+    "answer": 2,
+    "explanation": "onclick se activa cuando el usuario hace clic en un elemento."
+  },
+  {
+    "question": "¿Qué lenguaje se usa comúnmente para el desarrollo backend?",
+    "options": ["HTML", "CSS", "JavaScript", "Python"],
+    "answer": 3,
+    "explanation": "Python es ampliamente usado en el backend por su simplicidad y frameworks como Django y Flask."
+  },
+  {
+    "question": "¿Qué lenguaje se usa en el backend con Node.js?",
+    "options": ["Java", "Python", "JavaScript", "PHP"],
+    "answer": 2,
+    "explanation": "Node.js permite ejecutar JavaScript en el servidor para desarrollo backend."
+  },
+  {
+    "question": "¿Qué protocolo se usa para enviar datos entre cliente y servidor en la web?",
+    "options": ["FTP", "SMTP", "HTTP", "DHCP"],
+    "answer": 2,
+    "explanation": "HTTP (HyperText Transfer Protocol) es el protocolo base para la comunicación web."
+  },
+  {
+    "question": "¿Qué formato se usa comúnmente para intercambiar datos entre cliente y servidor?",
+    "options": ["XML", "CSV", "JSON", "TXT"],
+    "answer": 2,
+    "explanation": "JSON (JavaScript Object Notation) es ligero, legible y ampliamente usado en APIs."
+  },
+  {
+    "question": "¿Qué herramienta permite probar APIs REST de forma interactiva?",
+    "options": ["Git", "Postman", "Docker", "Jenkins"],
+    "answer": 1,
+    "explanation": "Postman permite enviar peticiones HTTP y analizar respuestas de APIs REST."
+  },
+  {
+    "question": "¿Qué tipo de prueba verifica que una función individual funciona correctamente?",
+    "options": ["Prueba de integración", "Prueba de sistema", "Prueba unitaria", "Prueba de aceptación"],
+    "answer": 2,
+    "explanation": "Las pruebas unitarias validan funciones o métodos individuales en aislamiento."
+  },
+  {
+    "question": "¿Qué tipo de prueba verifica que los módulos funcionan correctamente al interactuar?",
+    "options": ["Prueba unitaria", "Prueba de integración", "Prueba de carga", "Prueba de regresión"],
+    "answer": 1,
+    "explanation": "La prueba de integración valida que los componentes interactúan correctamente entre sí."
+  },
+  {
+    "question": "¿Qué tipo de prueba verifica que el sistema cumple con los requisitos del usuario?",
+    "options": ["Prueba de unidad", "Prueba de integración", "Prueba de aceptación", "Prueba de estrés"],
+    "answer": 2,
+    "explanation": "La prueba de aceptación valida que el sistema cumple con lo que el usuario espera."
+  },
+  {
+    "question": "¿Qué herramienta permite ejecutar pruebas automatizadas en JavaScript?",
+    "options": ["Jest", "Git", "Docker", "Postman"],
+    "answer": 0,
+    "explanation": "Jest es un framework de pruebas para JavaScript que permite validar funciones y componentes."
+  }
+]
