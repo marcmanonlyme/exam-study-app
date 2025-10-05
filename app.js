@@ -289,8 +289,23 @@ function renderExamScoresTable() {
   const tbody = document.querySelector('#examScoresTable tbody');
   tbody.innerHTML = '';
   const scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
-  scores.forEach(score => {
-    tbody.innerHTML += `<tr><td>${score.correct}</td><td>${score.total}</td><td>${score.duration}</td></tr>`;
+  scores.forEach((score, idx) => {
+    tbody.innerHTML += `<tr>
+      <td>${score.correct}</td>
+      <td>${score.total}</td>
+      <td>${score.duration}</td>
+      <td><button class='deleteScoreBtn' data-idx='${idx}' style='background:#ff4136;color:#fff;border:none;border-radius:6px;padding:4px 12px;cursor:pointer;'>Eliminar</button></td>
+    </tr>`;
+  });
+  // Add event listeners for delete buttons
+  tbody.querySelectorAll('.deleteScoreBtn').forEach(btn => {
+    btn.onclick = function() {
+      const idx = parseInt(btn.getAttribute('data-idx'), 10);
+      const scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
+      scores.splice(idx, 1);
+      localStorage.setItem('examSimScores', JSON.stringify(scores));
+      renderExamScoresTable();
+    };
   });
 }
 
