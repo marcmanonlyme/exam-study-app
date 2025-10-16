@@ -28,9 +28,9 @@ function renderCountdown() {
   setInterval(updateCountdown, 1000);
 }
 
-function renderStats() {
+async function renderStats() {
   let html = '<h2>Estadísticas por módulo</h2><table border="1" cellpadding="6"><tr><th>Módulo</th><th>Correctas</th><th>Incorrectas</th><th>No respondidas</th></tr>';
-  modules.forEach(mod => {
+  for (const mod of modules) {
     // Prefer aggregated stats if available
     let correct = 0, incorrect = 0, notAnswered = 0, total = 0;
     try {
@@ -41,7 +41,7 @@ function renderStats() {
         incorrect = total - correct;
         notAnswered = 0;
       } else {
-        mod.sections.forEach(sec => {
+        for (const sec of mod.sections) {
           const key = `resultado_${mod.name}_seccion${sec}`;
           const res = localStorage.getItem(key);
           if (res) {
@@ -50,14 +50,22 @@ function renderStats() {
             incorrect += (obj.total - obj.score);
             total += obj.total;
           } else {
-            notAnswered += 5; // Assume 5 questions per section if not answered
-            total += 5;
+            // fetch the section JSON to count questions
+            try {
+              const resp = await fetch(`data/${mod.name}/seccion${sec}.json`);
+              const jd = await resp.json();
+              const count = Array.isArray(jd) ? jd.length : Array.isArray(jd.preguntas) ? jd.preguntas.length : 0;
+              notAnswered += count;
+              total += count;
+            } catch (e) {
+              // if fetch fails, assume 0
+            }
           }
-        });
+        }
       }
     } catch (e) {
       // fallback to per-section computation on error
-      mod.sections.forEach(sec => {
+      for (const sec of mod.sections) {
         const key = `resultado_${mod.name}_seccion${sec}`;
         const res = localStorage.getItem(key);
         if (res) {
@@ -66,13 +74,20 @@ function renderStats() {
           incorrect += (obj.total - obj.score);
           total += obj.total;
         } else {
-          notAnswered += 5;
-          total += 5;
+          try {
+            const resp = await fetch(`data/${mod.name}/seccion${sec}.json`);
+            const jd = await resp.json();
+            const count = Array.isArray(jd) ? jd.length : Array.isArray(jd.preguntas) ? jd.preguntas.length : 0;
+            notAnswered += count;
+            total += count;
+          } catch (e2) {
+            // ignore
+          }
         }
-      });
+      }
     }
     html += `<tr><td>${mod.name}</td><td>${correct}</td><td>${incorrect}</td><td>${notAnswered}</td></tr>`;
-  });
+  }
   html += '</table>';
   document.getElementById('stats').innerHTML = html;
 }
