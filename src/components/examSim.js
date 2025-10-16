@@ -215,14 +215,23 @@ export async function startExamSim(mainContent, modules, timeLimit, numQuestions
         resultDiv.style.color = "#ff4136";
         return;
       }
-      if (currentIndex < questions.length - 1) {
-        currentIndex++;
-        renderExamQuestion();
+      // If on last question, submitting/finishing
+      if (currentIndex >= questions.length - 1) {
+        finishExam();
+        return;
       }
+      currentIndex++;
+      renderExamQuestion();
     };
     document.getElementById("skipExamBtn").onclick = () => {
       userAnswers[currentIndex] = null;
-      if (currentIndex < questions.length - 1) { currentIndex++; renderExamQuestion(); }
+      // If skipping last question, finish
+      if (currentIndex >= questions.length - 1) {
+        finishExam();
+        return;
+      }
+      currentIndex++;
+      renderExamQuestion();
     };
     document.getElementById("finishExamBtn").onclick = () => {
       finishExam();
@@ -234,56 +243,121 @@ export async function startExamSim(mainContent, modules, timeLimit, numQuestions
   }
 
   function finishExam() {
-    let correct = 0;
-    questions.forEach((q, i) => {
-      const ans = userAnswers[i];
-      if (ans !== null && ((q.answer !== undefined && ans === q.answer) || (q.respuesta !== undefined && (q.opciones ? q.opciones[ans] : q.options[ans]) === q.respuesta))) {
-        correct++;
+    // Check for skipped questions
+    const skippedIndexes = userAnswers.map((ans, idx) => ans === null ? idx : -1).filter(idx => idx !== -1);
+    if (skippedIndexes.length > 0) {
+      // Cycle through skipped questions before showing results
+      let skippedCurrent = 0;
+      function renderSkippedQuestion() {
+        const idx = skippedIndexes[skippedCurrent];
+        const q = questions[idx];
+        mainContent.innerHTML = `
+          <h2>Pregunta saltada (${skippedCurrent + 1} de ${skippedIndexes.length})</h2>
+          <div class="question"><p>${q.question || q.pregunta}</p></div>
+          <form id="skippedForm"></form>
+          <div style="margin-top:18px; display:flex; gap:10px;">
+            <button id="prevSkippedBtn" ${skippedCurrent === 0 ? 'disabled' : ''}>Anterior</button>
+            <button id="nextSkippedBtn" ${skippedCurrent === skippedIndexes.length - 1 ? 'disabled' : ''}>Siguiente</button>
+            <button id="saveSkippedBtn">Guardar respuesta</button>
+            <button id="finishSkippedBtn">Finalizar examen</button>
+          </div>
+          <div id="skippedResult" class="result"></div>
+        `;
+        let optionsHtml = '';
+        (q.options || q.opciones).forEach((opt, i) => {
+          optionsHtml += `
+            <label tabindex="0">
+              <input type="radio" name="qSkipped${idx}" value="${i}" ${userAnswers[idx] === i ? 'checked' : ''}>
+              ${opt}
+            </label><br>
+          `;
+        });
+        document.getElementById("skippedForm").innerHTML = optionsHtml;
+        document.getElementById("prevSkippedBtn").onclick = () => {
+          if (skippedCurrent > 0) { skippedCurrent--; renderSkippedQuestion(); }
+        };
+        document.getElementById("nextSkippedBtn").onclick = () => {
+          if (skippedCurrent < skippedIndexes.length - 1) { skippedCurrent++; renderSkippedQuestion(); }
+        };
+        document.getElementById("saveSkippedBtn").onclick = () => {
+          const radios = document.querySelectorAll(`input[name='qSkipped${idx}']`);
+          let selected = null;
+          radios.forEach((radio, i) => { if (radio.checked) selected = i; });
+          if (selected === null) {
+            const resultDiv = document.getElementById("skippedResult");
+            resultDiv.textContent = "Por favor selecciona una opción antes de guardar.";
+            resultDiv.style.color = "#ff4136";
+            return;
+          }
+          userAnswers[idx] = selected;
+          const resultDiv = document.getElementById("skippedResult");
+          resultDiv.textContent = "Respuesta guardada.";
+          resultDiv.style.color = "#2d6cdf";
+        };
+        document.getElementById("finishSkippedBtn").onclick = () => {
+          // Remove any remaining skipped indexes and show results
+          for (let i = 0; i < skippedIndexes.length; i++) {
+            if (userAnswers[skippedIndexes[i]] === null) userAnswers[skippedIndexes[i]] = null;
+          }
+          showExamResult();
+        };
       }
-    });
-    const total = questions.length;
-    const durationSec = Math.floor((Date.now() - startTime) / 1000);
-    const min = Math.floor(durationSec / 60);
-    const sec = durationSec % 60;
-    const durationStr = `${min}:${sec.toString().padStart(2,'0')}`;
-    // Save score
-    let scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
-    scores.push({ correct, total, duration: durationStr, date: new Date().toISOString() });
-    localStorage.setItem('examSimScores', JSON.stringify(scores));
-    // Show result with wrong answers and explanations
-    let reviewHtml = '';
-    questions.forEach((q, i) => {
-      const ans = userAnswers[i];
-      const isCorrect = ans !== null && ((q.answer !== undefined && ans === q.answer) || (q.respuesta !== undefined && (q.opciones ? q.opciones[ans] : q.options[ans]) === q.respuesta));
-      if (!isCorrect) {
-        let correctText = '';
-        if (q.answer !== undefined) {
-          correctText = (q.options || q.opciones)[q.answer];
-        } else if (q.respuesta !== undefined) {
-          correctText = q.respuesta;
+      renderSkippedQuestion();
+      return;
+    }
+    showExamResult();
+    function showExamResult() {
+      let correct = 0;
+      questions.forEach((q, i) => {
+        const ans = userAnswers[i];
+        if (ans !== null && ((q.answer !== undefined && ans === q.answer) || (q.respuesta !== undefined && (q.opciones ? q.opciones[ans] : q.options[ans]) === q.respuesta))) {
+          correct++;
         }
-        let explanation = q.explanation || q.explicacion || '';
-        reviewHtml += `<div style="background:#ffeaea;border-radius:8px;padding:12px;margin-bottom:12px;">
-          <strong>Pregunta ${i+1}:</strong> ${(q.question || q.pregunta)}<br>
-          <span style="color:#ff4136;">Tu respuesta: ${ans !== null ? (q.options || q.opciones)[ans] : 'Sin responder'}</span><br>
-          <span style="color:#2d6cdf;">Respuesta correcta: ${correctText}</span><br>
-          ${explanation ? `<div style='margin-top:6px;'><em>Explicación:</em> ${explanation}</div>` : ''}
-        </div>`;
-      }
-    });
-    mainContent.innerHTML = `<h2>Resultado del Examen</h2>
-      <div style="font-size:1.3em;color:#2d6cdf;margin-bottom:18px;">${correct} de ${total} correctas</div>
-      <div>Duración: ${durationStr}</div>
-      <div>Fecha y Hora: ${new Date().toLocaleString()}</div>
-      <button id="volverSimBtn" style="margin-top:24px;background:#4f8cff;color:#fff;padding:12px 32px;border:none;border-radius:8px;font-size:1em;cursor:pointer;">Volver al Simulador</button>
-      <div style='margin-top:32px;'>
-        <h3 style='color:#ff4136;'>Respuestas incorrectas y explicaciones</h3>
-        ${reviewHtml || '<div style=\'color:#2d6cdf;\'>¡Todas las respuestas son correctas!</div>'}
-      </div>
-    `;
-    document.getElementById("volverSimBtn").onclick = () => {
-      renderExamSimConfig(mainContent, modules);
-    };
+      });
+      const total = questions.length;
+      const durationSec = Math.floor((Date.now() - startTime) / 1000);
+      const min = Math.floor(durationSec / 60);
+      const sec = durationSec % 60;
+      const durationStr = `${min}:${sec.toString().padStart(2,'0')}`;
+      // Save score
+      let scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
+      scores.push({ correct, total, duration: durationStr, date: new Date().toISOString() });
+      localStorage.setItem('examSimScores', JSON.stringify(scores));
+      // Show result with wrong answers and explanations
+      let reviewHtml = '';
+      questions.forEach((q, i) => {
+        const ans = userAnswers[i];
+        const isCorrect = ans !== null && ((q.answer !== undefined && ans === q.answer) || (q.respuesta !== undefined && (q.opciones ? q.opciones[ans] : q.options[ans]) === q.respuesta));
+        if (!isCorrect) {
+          let correctText = '';
+          if (q.answer !== undefined) {
+            correctText = (q.options || q.opciones)[q.answer];
+          } else if (q.respuesta !== undefined) {
+            correctText = q.respuesta;
+          }
+          let explanation = q.explanation || q.explicacion || '';
+          reviewHtml += `<div style="background:#ffeaea;border-radius:8px;padding:12px;margin-bottom:12px;">
+            <strong>Pregunta ${i+1}:</strong> ${(q.question || q.pregunta)}<br>
+            <span style="color:#ff4136;">Tu respuesta: ${ans !== null ? (q.options || q.opciones)[ans] : 'Sin responder'}</span><br>
+            <span style="color:#2d6cdf;">Respuesta correcta: ${correctText}</span><br>
+            ${explanation ? `<div style='margin-top:6px;'><em>Explicación:</em> ${explanation}</div>` : ''}
+          </div>`;
+        }
+      });
+      mainContent.innerHTML = `<h2>Resultado del Examen</h2>
+        <div style="font-size:1.3em;color:#2d6cdf;margin-bottom:18px;">${correct} de ${total} correctas</div>
+        <div>Duración: ${durationStr}</div>
+        <div>Fecha y Hora: ${new Date().toLocaleString()}</div>
+        <button id="volverSimBtn" style="margin-top:24px;background:#4f8cff;color:#fff;padding:12px 32px;border:none;border-radius:8px;font-size:1em;cursor:pointer;">Volver al Simulador</button>
+        <div style='margin-top:32px;'>
+          <h3 style='color:#ff4136;'>Respuestas incorrectas y explicaciones</h3>
+          ${reviewHtml || '<div style=\'color:#2d6cdf;\'>¡Todas las respuestas son correctas!</div>'}
+        </div>
+      `;
+      document.getElementById("volverSimBtn").onclick = () => {
+        renderExamSimConfig(mainContent, modules);
+      };
+    }
   }
 
   // Timer logic
