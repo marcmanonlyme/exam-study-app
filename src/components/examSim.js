@@ -19,21 +19,27 @@ export function renderExamSimConfig(mainContent, modules) {
           asc: '&#x25B2;', // ▲
           desc: '&#x25BC;' // ▼
         };
+        document.getElementById('arrowDate').innerHTML = sortState.column === 'date' ? arrows[sortState.asc ? 'asc' : 'desc'] : '';
         document.getElementById('arrowCorrect').innerHTML = sortState.column === 'correct' ? arrows[sortState.asc ? 'asc' : 'desc'] : '';
         document.getElementById('arrowTotal').innerHTML = sortState.column === 'total' ? arrows[sortState.asc ? 'asc' : 'desc'] : '';
         document.getElementById('arrowDuration').innerHTML = sortState.column === 'duration' ? arrows[sortState.asc ? 'asc' : 'desc'] : '';
         // Highlight sorted column
-        ['sortCorrect','sortTotal','sortDuration'].forEach(id => {
-          document.getElementById(id).style.background = '';
-          document.getElementById(id).style.color = '';
+        ['sortDate','sortCorrect','sortTotal','sortDuration'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) { el.style.background = ''; el.style.color = ''; }
         });
         if (sortState.column) {
-          const colId = sortState.column === 'correct' ? 'sortCorrect' : sortState.column === 'total' ? 'sortTotal' : 'sortDuration';
-          document.getElementById(colId).style.background = '#d0e6ff';
-          document.getElementById(colId).style.color = '#2d6cdf';
+          const colId = sortState.column === 'date' ? 'sortDate' : sortState.column === 'correct' ? 'sortCorrect' : sortState.column === 'total' ? 'sortTotal' : 'sortDuration';
+          const el = document.getElementById(colId);
+          if (el) { el.style.background = '#d0e6ff'; el.style.color = '#2d6cdf'; }
         }
       }
       updateSortArrows();
+      document.getElementById('sortDate').onclick = function() {
+        window.examSimSortState = { column: 'date', asc: window.examSimSortState.column === 'date' ? !window.examSimSortState.asc : true };
+        renderExamScoresTable();
+        updateSortArrows();
+      };
       document.getElementById('sortCorrect').onclick = function() {
         window.examSimSortState = { column: 'correct', asc: window.examSimSortState.column === 'correct' ? !window.examSimSortState.asc : true };
         renderExamScoresTable();
@@ -59,6 +65,11 @@ export function renderExamSimConfig(mainContent, modules) {
   // Add sorting event listeners
   document.getElementById('sortCorrect').onclick = function() {
     window.examSimSortState = { column: 'correct', asc: window.examSimSortState.column === 'correct' ? !window.examSimSortState.asc : true };
+    renderExamScoresTable();
+    updateSortArrows();
+  };
+  document.getElementById('sortDate').onclick = function() {
+    window.examSimSortState = { column: 'date', asc: window.examSimSortState.column === 'date' ? !window.examSimSortState.asc : true };
     renderExamScoresTable();
     updateSortArrows();
   };
@@ -96,6 +107,10 @@ function renderExamScoresTable() {
           return m * 60 + s;
         };
         return sortState.asc ? parseTime(a.duration) - parseTime(b.duration) : parseTime(b.duration) - parseTime(a.duration);
+      } else if (sortState.column === 'date') {
+        const da = new Date(a.date || a.timestamp || 0).getTime();
+        const db = new Date(b.date || b.timestamp || 0).getTime();
+        return sortState.asc ? da - db : db - da;
       } else {
         return sortState.asc ? a[sortState.column] - b[sortState.column] : b[sortState.column] - a[sortState.column];
       }
