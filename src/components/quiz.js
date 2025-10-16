@@ -34,6 +34,18 @@ export function loadQuiz(mainContent, moduleName, sectionNum) {
           const key = `resultado_${moduleName}_seccion${sectionNum}`;
           const obj = { score: correct, total: data.length, date: new Date().toISOString() };
           localStorage.setItem(key, JSON.stringify(obj));
+          // Update aggregated module stats
+          try {
+            const aggKey = `stats_${moduleName}`;
+            const existing = JSON.parse(localStorage.getItem(aggKey) || '{}');
+            const prevCorrect = existing.correct || 0;
+            const prevTotal = existing.total || 0;
+            const newCorrect = prevCorrect + correct;
+            const newTotal = prevTotal + data.length;
+            localStorage.setItem(aggKey, JSON.stringify({ correct: newCorrect, total: newTotal, updated: new Date().toISOString() }));
+          } catch (e) {
+            // ignore aggregation errors
+          }
         } catch (e) {
           // ignore storage errors
         }

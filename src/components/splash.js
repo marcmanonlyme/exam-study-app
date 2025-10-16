@@ -31,20 +31,46 @@ function renderCountdown() {
 function renderStats() {
   let html = '<h2>Estadísticas por módulo</h2><table border="1" cellpadding="6"><tr><th>Módulo</th><th>Correctas</th><th>Incorrectas</th><th>No respondidas</th></tr>';
   modules.forEach(mod => {
+    // Prefer aggregated stats if available
     let correct = 0, incorrect = 0, notAnswered = 0, total = 0;
-    mod.sections.forEach(sec => {
-      const key = `resultado_${mod.name}_seccion${sec}`;
-      const res = localStorage.getItem(key);
-      if (res) {
-        const obj = JSON.parse(res);
-        correct += obj.score;
-        incorrect += (obj.total - obj.score);
-        total += obj.total;
+    try {
+      const agg = JSON.parse(localStorage.getItem(`stats_${mod.name}`) || 'null');
+      if (agg && typeof agg.correct === 'number' && typeof agg.total === 'number') {
+        correct = agg.correct;
+        total = agg.total;
+        incorrect = total - correct;
+        notAnswered = 0;
       } else {
-        notAnswered += 5; // Assume 5 questions per section if not answered
-        total += 5;
+        mod.sections.forEach(sec => {
+          const key = `resultado_${mod.name}_seccion${sec}`;
+          const res = localStorage.getItem(key);
+          if (res) {
+            const obj = JSON.parse(res);
+            correct += obj.score;
+            incorrect += (obj.total - obj.score);
+            total += obj.total;
+          } else {
+            notAnswered += 5; // Assume 5 questions per section if not answered
+            total += 5;
+          }
+        });
       }
-    });
+    } catch (e) {
+      // fallback to per-section computation on error
+      mod.sections.forEach(sec => {
+        const key = `resultado_${mod.name}_seccion${sec}`;
+        const res = localStorage.getItem(key);
+        if (res) {
+          const obj = JSON.parse(res);
+          correct += obj.score;
+          incorrect += (obj.total - obj.score);
+          total += obj.total;
+        } else {
+          notAnswered += 5;
+          total += 5;
+        }
+      });
+    }
     html += `<tr><td>${mod.name}</td><td>${correct}</td><td>${incorrect}</td><td>${notAnswered}</td></tr>`;
   });
   html += '</table>';
