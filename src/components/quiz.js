@@ -6,6 +6,44 @@ export function loadQuiz(mainContent, moduleName, sectionNum) {
       let currentIndex = 0;
       let userAnswers = Array(data.length).fill(null);
 
+      // Show results modal / view when submitting answers
+      function checkAnswersModal(moduleName, sectionNum, data, userAnswers) {
+        let correct = 0;
+        let reviewHtml = '';
+        data.forEach((q, i) => {
+          const ans = userAnswers[i];
+          const isCorrect = ans !== null && ((q.answer !== undefined && ans === q.answer) || (q.respuesta !== undefined && (q.opciones ? q.opciones[ans] : q.options[ans]) === q.respuesta));
+          if (isCorrect) {
+            correct++;
+          } else {
+            let correctText = '';
+            if (q.answer !== undefined) correctText = (q.options || q.opciones)[q.answer];
+            else if (q.respuesta !== undefined) correctText = q.respuesta;
+            const userText = ans !== null ? (q.options || q.opciones)[ans] : 'Sin responder';
+            const explanation = q.explanation || q.explicacion || '';
+            reviewHtml += `<div style="background:#ffeaea;border-radius:8px;padding:12px;margin-bottom:12px;">
+              <strong>Pregunta ${i+1}:</strong> ${(q.question || q.pregunta)}<br>
+              <span style="color:#ff4136;">Tu respuesta: ${userText}</span><br>
+              <span style="color:#2d6cdf;">Respuesta correcta: ${correctText}</span><br>
+              ${explanation ? `<div style='margin-top:6px;'><em>Explicación:</em> ${explanation}</div>` : ''}
+            </div>`;
+          }
+        });
+        mainContent.innerHTML = `
+          <h2>Resultado - ${moduleName} Sección ${sectionNum}</h2>
+          <div style="font-size:1.2em;color:#2d6cdf;margin-bottom:12px;">${correct} de ${data.length} correctas</div>
+          <div style='margin-top:18px;'>
+            <h3>Revisión</h3>
+            ${reviewHtml || '<div style="color:#2d6cdf;">¡Todas las respuestas son correctas!</div>'}
+          </div>
+          <div style="margin-top:18px;"><button id="volverBtn" style="background:#4f8cff;color:#fff;padding:8px 16px;border:none;border-radius:6px;">Volver al módulo</button></div>
+        `;
+        document.getElementById('volverBtn').onclick = () => {
+          // reload the quiz section
+          loadQuiz(mainContent, moduleName, sectionNum);
+        };
+      }
+
       function renderQuestion() {
         mainContent.innerHTML = `
           <h2>${moduleName} - Sección ${sectionNum}</h2>
