@@ -4,6 +4,119 @@
     "options": ["DNS", "DHCP", "FTP", "HTTP"],
     "answer": 1,
     "explanation": "DHCP asigna direcciones IP dinámicas a dispositivos conectados a la red."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para reiniciar el sistema?",
+    "options": ["reboot", "shutdown -r", "restart", "systemctl reboot"],
+    "answer": 0,
+    "explanation": "reboot reinicia el sistema inmediatamente desde la terminal."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para apagar el sistema?",
+    "options": ["shutdown", "poweroff", "halt", "exit"],
+    "answer": 0,
+    "explanation": "shutdown apaga el sistema de forma segura, permitiendo programar el apagado."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver el estado de un servicio?",
+    "options": ["systemctl status", "service check", "statusctl", "servicectl"],
+    "answer": 0,
+    "explanation": "systemctl status muestra el estado actual de un servicio administrado por systemd."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para iniciar un servicio?",
+    "options": ["systemctl start", "service run", "startctl", "servicectl start"],
+    "answer": 0,
+    "explanation": "systemctl start inicia un servicio en sistemas que usan systemd."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para detener un servicio?",
+    "options": ["systemctl stop", "service halt", "stopctl", "servicectl stop"],
+    "answer": 0,
+    "explanation": "systemctl stop detiene un servicio activo en el sistema."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para habilitar un servicio al inicio?",
+    "options": ["systemctl enable", "service autostart", "enablectl", "servicectl enable"],
+    "answer": 0,
+    "explanation": "systemctl enable configura un servicio para que se inicie automáticamente al arrancar el sistema."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para deshabilitar un servicio al inicio?",
+    "options": ["systemctl disable", "service noauto", "disablectl", "servicectl disable"],
+    "answer": 0,
+    "explanation": "systemctl disable evita que un servicio se inicie automáticamente al arrancar."
+  },
+  {
+    "question": "¿Qué herramienta permite monitorear el tráfico de red en tiempo real?",
+    "options": ["iftop", "netstat", "ping", "ip monitor"],
+    "answer": 0,
+    "explanation": "iftop muestra el tráfico de red en tiempo real por interfaz y dirección IP."
+  },
+  {
+    "question": "¿Qué herramienta permite analizar paquetes de red en profundidad?",
+    "options": ["tcpdump", "ping", "netstat", "iftop"],
+    "answer": 0,
+    "explanation": "tcpdump captura y analiza paquetes de red para diagnóstico y auditoría."
+  },
+  {
+    "question": "¿Qué herramienta gráfica permite analizar tráfico de red en Linux?",
+    "options": ["Wireshark", "Netcat", "Nmap", "Zenmap"],
+    "answer": 0,
+    "explanation": "Wireshark permite inspeccionar paquetes de red con una interfaz gráfica detallada."
+  },
+  {
+    "question": "¿Qué herramienta permite escanear puertos abiertos en un host remoto?",
+    "options": ["Nmap", "Netstat", "Ping", "Traceroute"],
+    "answer": 0,
+    "explanation": "Nmap escanea puertos y servicios disponibles en un host remoto."
+  },
+  {
+    "question": "¿Qué herramienta permite escanear redes desde una interfaz gráfica?",
+    "options": ["Zenmap", "Wireshark", "Netcat", "Tcpdump"],
+    "answer": 0,
+    "explanation": "Zenmap es la interfaz gráfica oficial de Nmap para escaneo de redes."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para enviar archivos entre equipos mediante SSH?",
+    "options": ["scp", "rsync", "ftp", "sftp"],
+    "answer": 0,
+    "explanation": "scp copia archivos entre sistemas usando el protocolo SSH de forma segura."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para sincronizar directorios entre equipos?",
+    "options": ["rsync", "scp", "ftp", "sync"],
+    "answer": 0,
+    "explanation": "rsync sincroniza archivos y directorios entre sistemas locales o remotos."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para conectarse a un servidor remoto por SSH?",
+    "options": ["ssh", "telnet", "ftp", "connect"],
+    "answer": 0,
+    "explanation": "ssh establece una conexión segura con un servidor remoto mediante cifrado."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para acceder a una sesión FTP?",
+    "options": ["ftp", "sftp", "scp", "connect"],
+    "answer": 0,
+    "explanation": "ftp permite conectarse a servidores FTP para transferir archivos."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para acceder a una sesión FTP segura?",
+    "options": ["sftp", "ftp", "scp", "rsync"],
+    "answer": 0,
+    "explanation": "sftp usa el protocolo SSH para transferencias seguras de archivos."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para verificar conectividad con un puerto específico?",
+    "options": ["nc", "telnet", "ping", "nmap"],
+    "answer": 0,
+    "explanation": "nc (netcat) permite probar la conectividad con puertos específicos en hosts remotos."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para escanear puertos abiertos en una IP?",
+    "options": ["nmap", "netstat", "ping", "tcpdump"],
+    "answer": 0,
+    "explanation": "nmap escanea puertos abiertos y servicios disponibles en una dirección IP."
   }
-  // ...continúa el archivo original...
 ]

@@ -4,6 +4,119 @@
     "options": ["Obfuscación", "Minificación", "Refactorización", "Documentación"],
     "answer": 2,
     "explanation": "La refactorización mejora la estructura interna del código sin cambiar su comportamiento externo."
+  },
+  {
+    "question": "¿Qué documento describe los requisitos funcionales y no funcionales del sistema?",
+    "options": ["README", "Manual de usuario", "Especificación de requisitos", "Plan de pruebas"],
+    "answer": 2,
+    "explanation": "La especificación de requisitos define lo que el sistema debe hacer y cómo debe comportarse."
+  },
+  {
+    "question": "¿Qué documento describe cómo instalar y usar el sistema desde el punto de vista del usuario?",
+    "options": ["README", "Manual de usuario", "Plan de pruebas", "Diseño técnico"],
+    "answer": 1,
+    "explanation": "El manual de usuario proporciona instrucciones claras para operar el sistema."
+  },
+  {
+    "question": "¿Qué documento describe la arquitectura y decisiones técnicas del sistema?",
+    "options": ["Diseño técnico", "Manual de usuario", "README", "Plan de pruebas"],
+    "answer": 0,
+    "explanation": "El diseño técnico detalla la estructura, componentes y tecnologías utilizadas en el sistema."
+  },
+  {
+    "question": "¿Qué documento describe los casos, criterios y procedimientos para validar el sistema?",
+    "options": ["Plan de pruebas", "Diseño técnico", "Manual de usuario", "Especificación de requisitos"],
+    "answer": 0,
+    "explanation": "El plan de pruebas define cómo se verificará que el sistema cumple con los requisitos."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que los cambios no afectaron funcionalidades previas?",
+    "options": ["Prueba de regresión", "Prueba de aceptación", "Prueba de integración", "Prueba de carga"],
+    "answer": 0,
+    "explanation": "La prueba de regresión asegura que el software sigue funcionando correctamente después de cambios."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que el sistema cumple con los requisitos del cliente?",
+    "options": ["Prueba de aceptación", "Prueba de integración", "Prueba de carga", "Prueba de unidad"],
+    "answer": 0,
+    "explanation": "La prueba de aceptación valida que el sistema cumple con lo que el cliente espera."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar el comportamiento del sistema bajo condiciones extremas?",
+    "options": ["Prueba de carga", "Prueba de estrés", "Prueba de aceptación", "Prueba de integración"],
+    "answer": 1,
+    "explanation": "La prueba de estrés evalúa cómo responde el sistema ante condiciones límite o sobrecarga."
+  },
+  {
+    "question": "¿Qué técnica permite desplegar actualizaciones sin interrumpir el servicio?",
+    "options": ["Rollback", "Hotfix", "Despliegue continuo", "Blue-Green Deployment"],
+    "answer": 3,
+    "explanation": "Blue-Green Deployment permite cambiar entre entornos sin afectar a los usuarios activos."
+  },
+  {
+    "question": "¿Qué técnica permite revertir una versión anterior del sistema en caso de error?",
+    "options": ["Rollback", "Hotfix", "Refactorización", "Despliegue continuo"],
+    "answer": 0,
+    "explanation": "El rollback revierte el sistema a una versión estable anterior si ocurre un fallo."
+  },
+  {
+    "question": "¿Qué técnica permite aplicar correcciones urgentes sin esperar el ciclo de despliegue completo?",
+    "options": ["Rollback", "Hotfix", "Refactorización", "Despliegue continuo"],
+    "answer": 1,
+    "explanation": "Un hotfix es una corrección rápida aplicada directamente en producción para resolver errores críticos."
+  },
+  {
+    "question": "¿Qué herramienta permite gestionar dependencias en proyectos JavaScript?",
+    "options": ["npm", "pip", "composer", "gradle"],
+    "answer": 0,
+    "explanation": "npm (Node Package Manager) gestiona paquetes y dependencias en proyectos JavaScript."
+  },
+  {
+    "question": "¿Qué herramienta permite gestionar dependencias en proyectos Python?",
+    "options": ["npm", "pip", "composer", "gradle"],
+    "answer": 1,
+    "explanation": "pip instala y gestiona paquetes en proyectos desarrollados con Python."
+  },
+  {
+    "question": "¿Qué herramienta permite gestionar dependencias en proyectos PHP?",
+    "options": ["npm", "pip", "composer", "gradle"],
+    "answer": 2,
+    "explanation": "Composer gestiona librerías y dependencias en proyectos PHP."
+  },
+  {
+    "question": "¿Qué herramienta permite compilar y construir proyectos Java?",
+    "options": ["npm", "pip", "composer", "gradle"],
+    "answer": 3,
+    "explanation": "Gradle automatiza la compilación, pruebas y empaquetado de proyectos Java y otros lenguajes."
+  },
+  {
+    "question": "¿Qué técnica permite dividir el código en módulos reutilizables?",
+    "options": ["Minificación", "Modularización", "Compresión", "Caching"],
+    "answer": 1,
+    "explanation": "La modularización mejora la organización del código y facilita su mantenimiento."
+  },
+  {
+    "question": "¿Qué técnica permite reducir el tamaño de archivos para mejorar el rendimiento?",
+    "options": ["Minificación", "Modularización", "Compresión", "Caching"],
+    "answer": 2,
+    "explanation": "La compresión reduce el tamaño de archivos transmitidos para acelerar la carga."
+  },
+  {
+    "question": "¿Qué técnica permite almacenar archivos en el navegador para evitar descargas repetidas?",
+    "options": ["Caching", "Minificación", "Compresión", "Obfuscación"],
+    "answer": 0,
+    "explanation": "El caching mejora el rendimiento al evitar descargas innecesarias de recursos."
+  },
+  {
+    "question": "¿Qué técnica permite ocultar la lógica del código para dificultar su lectura?",
+    "options": ["Obfuscación", "Minificación", "Compresión", "Modularización"],
+    "answer": 0,
+    "explanation": "La obfuscación transforma el código en una forma difícil de entender para proteger la lógica."
+  },
+  {
+    "question": "¿Qué práctica recomienda escribir pruebas antes de implementar la funcionalidad?",
+    "options": ["TDD", "BDD", "CI/CD", "Refactorización"],
+    "answer": 0,
+    "explanation": "TDD (Test Driven Development) promueve escribir pruebas antes del código para guiar el desarrollo."
   }
-  // ...continúa el archivo original...
 ]

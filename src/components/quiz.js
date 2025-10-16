@@ -1,6 +1,6 @@
 // Handles quiz logic and UI
 export function loadQuiz(mainContent, moduleName, sectionNum) {
-  fetch(`Modulos/${moduleName}/seccion${sectionNum}.json`)
+  fetch(`data/${moduleName}/seccion${sectionNum}.json`)
     .then(response => response.json())
     .then(data => {
       let currentIndex = 0;

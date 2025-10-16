@@ -39,7 +39,84 @@
     "question": "¿Qué norma define los procesos del ciclo de vida del software?",
     "options": ["ISO/IEC 9126", "IEEE 830", "ISO/IEC 12207", "IEEE 1012"],
     "answer": 2,
-    "explanation": "ISO/IEC 12207 define los procesos y actividades del ciclo de vida del software."
+    "explanation": "La norma ISO/IEC 12207 establece los procesos del ciclo de vida del software desde su concepción hasta su retiro."
+  },
+  {
+    "question": "¿Qué estructura de datos se usa para representar múltiples caminos entre nodos?",
+    "options": ["Árbol", "Grafo", "Pila", "Cola"],
+    "answer": 1,
+    "explanation": "Los grafos permiten múltiples conexiones entre nodos, ideales para redes sociales o mapas."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que el sistema completo funciona como se espera?",
+    "options": ["Prueba de unidad", "Prueba de integración", "Prueba de sistema", "Prueba de regresión"],
+    "answer": 2,
+    "explanation": "La prueba de sistema valida el comportamiento del software como un todo, incluyendo todos los componentes integrados."
+  },
+  {
+    "question": "¿Qué técnica permite ocultar los detalles internos de una clase?",
+    "options": ["Herencia", "Polimorfismo", "Encapsulamiento", "Abstracción"],
+    "answer": 2,
+    "explanation": "El encapsulamiento protege los datos internos y expone solo lo necesario mediante interfaces públicas."
+  },
+  {
+    "question": "¿Qué tipo de mantenimiento se realiza para adaptar el software a nuevos entornos?",
+    "options": ["Correctivo", "Perfectivo", "Preventivo", "Adaptativo"],
+    "answer": 3,
+    "explanation": "El mantenimiento adaptativo modifica el software para que funcione en nuevos entornos o plataformas."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza por el cliente para aceptar el sistema?",
+    "options": ["Prueba de integración", "Prueba de sistema", "Prueba de aceptación", "Prueba unitaria"],
+    "answer": 2,
+    "explanation": "La prueba de aceptación valida que el sistema cumple con los requisitos del cliente antes de su implementación."
+  },
+  {
+    "question": "¿Qué estructura de datos se usa comúnmente para implementar llamadas recursivas?",
+    "options": ["Cola", "Pila", "Árbol", "Lista"],
+    "answer": 1,
+    "explanation": "La pila (stack) se usa para almacenar el contexto de cada llamada recursiva."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar el rendimiento del sistema bajo carga?",
+    "options": ["Prueba de regresión", "Prueba de carga", "Prueba de integración", "Prueba de aceptación"],
+    "answer": 1,
+    "explanation": "La prueba de carga mide cómo se comporta el sistema ante múltiples usuarios o procesos simultáneos."
+  },
+  {
+    "question": "¿Qué técnica permite reutilizar código mediante clases base y derivadas?",
+    "options": ["Encapsulamiento", "Herencia", "Polimorfismo", "Abstracción"],
+    "answer": 1,
+    "explanation": "La herencia permite que una clase derive de otra y reutilice sus atributos y métodos."
+  },
+  {
+    "question": "¿Qué tipo de mantenimiento se realiza para mejorar el rendimiento sin cambiar la funcionalidad?",
+    "options": ["Correctivo", "Perfectivo", "Preventivo", "Adaptativo"],
+    "answer": 1,
+    "explanation": "El mantenimiento perfectivo busca optimizar el sistema sin alterar sus funciones."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar que los cambios no afectaron funcionalidades previas?",
+    "options": ["Prueba de regresión", "Prueba de aceptación", "Prueba de integración", "Prueba de carga"],
+    "answer": 0,
+    "explanation": "La prueba de regresión asegura que el software sigue funcionando correctamente después de cambios o correcciones."
+  },
+  {
+    "question": "¿Qué principio SOLID indica que las interfaces deben ser específicas y no obligar a implementar métodos innecesarios?",
+    "options": ["Open/Closed", "Interface Segregation", "Single Responsibility", "Dependency Inversion"],
+    "answer": 1,
+    "explanation": "El principio de segregación de interfaces promueve interfaces pequeñas y enfocadas."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para evaluar el comportamiento del sistema bajo condiciones extremas?",
+    "options": ["Prueba de carga", "Prueba de estrés", "Prueba de aceptación", "Prueba de integración"],
+    "answer": 1,
+    "explanation": "La prueba de estrés evalúa cómo responde el sistema ante condiciones límite o sobrecarga."
+  },
+  {
+    "question": "¿Qué norma define características de calidad como fiabilidad, usabilidad y mantenibilidad?",
+    "options": ["ISO/IEC 12207", "IEEE 830", "ISO/IEC 25010", "IEEE 1012"],
+    "answer": 2,
+    "explanation": "La norma ISO/IEC 25010 establece un modelo de calidad para productos software."
   }
-  // ...continúa el archivo original...
 ]

@@ -1,5 +1,5 @@
 // Handles splash screen and countdown
-import { modules } from './modules.js';
+import { modules } from '../modules.js';
 
 export function renderSplashScreen(mainContent) {
   mainContent.innerHTML = `<h1>🧠 Cuestionarios por Módulo</h1>

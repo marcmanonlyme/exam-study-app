@@ -1,4 +1,4 @@
-# Quiz navigation and submit buttons
+/* Quiz navigation and submit buttons */
 #prevBtn, #nextBtn, #submitBtn {
   background: #4f8cff;
   color: #fff;
@@ -141,7 +141,6 @@ h2 {
   box-shadow: 0 0 0 3px #4f8cff44;
   border: 2px solid #4f8cff;
 }
-  color: #2d6cdf;
 .question label {
   display: flex;
   align-items: center;
@@ -155,7 +154,6 @@ h2 {
   background: #eaf4ff;
   box-shadow: 0 2px 8px #4f8cff22;
 }
-}
 .question input[type="radio"] {
   accent-color: #4f8cff;
   margin-right: 12px;
@@ -166,7 +164,6 @@ h2 {
 .question input[type="radio"]:focus {
   outline: 2px solid #4f8cff;
   outline-offset: 2px;
-}
 }
 #quizForm {
   outline: none;
