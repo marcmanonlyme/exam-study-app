@@ -29,6 +29,15 @@ export function loadQuiz(mainContent, moduleName, sectionNum) {
             </div>`;
           }
         });
+        // Persist section result so splash statistics update
+        try {
+          const key = `resultado_${moduleName}_seccion${sectionNum}`;
+          const obj = { score: correct, total: data.length, date: new Date().toISOString() };
+          localStorage.setItem(key, JSON.stringify(obj));
+        } catch (e) {
+          // ignore storage errors
+        }
+
         mainContent.innerHTML = `
           <h2>Resultado - ${moduleName} Sección ${sectionNum}</h2>
           <div style="font-size:1.2em;color:#2d6cdf;margin-bottom:12px;">${correct} de ${data.length} correctas</div>
