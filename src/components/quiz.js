@@ -1,4 +1,5 @@
 // Handles quiz logic and UI
+import { escapeHtml, getJson, setJson, updateModuleAggregate } from '../utils.js';
 export function loadQuiz(mainContent, moduleName, sectionNum) {
   fetch(`data/${moduleName}/seccion${sectionNum}.json`)
     .then(response => response.json())
@@ -33,19 +34,9 @@ export function loadQuiz(mainContent, moduleName, sectionNum) {
         try {
           const key = `resultado_${moduleName}_seccion${sectionNum}`;
           const obj = { score: correct, total: data.length, date: new Date().toISOString() };
-          localStorage.setItem(key, JSON.stringify(obj));
-          // Update aggregated module stats
-          try {
-            const aggKey = `stats_${moduleName}`;
-            const existing = JSON.parse(localStorage.getItem(aggKey) || '{}');
-            const prevCorrect = existing.correct || 0;
-            const prevTotal = existing.total || 0;
-            const newCorrect = prevCorrect + correct;
-            const newTotal = prevTotal + data.length;
-            localStorage.setItem(aggKey, JSON.stringify({ correct: newCorrect, total: newTotal, updated: new Date().toISOString() }));
-          } catch (e) {
-            // ignore aggregation errors
-          }
+          setJson(key, obj);
+          // Update aggregated module stats (safe add)
+          updateModuleAggregate(moduleName, correct, data.length);
         } catch (e) {
           // ignore storage errors
         }
@@ -80,15 +71,15 @@ export function loadQuiz(mainContent, moduleName, sectionNum) {
         const quizForm = document.getElementById("quizForm");
         const q = data[currentIndex];
         let optionsHtml = '';
-        q.options.forEach((opt, i) => {
+        (q.options || q.opciones).forEach((opt, i) => {
           optionsHtml += `
             <label tabindex="0">
               <input type="radio" name="q${currentIndex}" value="${i}" ${userAnswers[currentIndex] === i ? 'checked' : ''}>
-              ${opt}
+              ${escapeHtml(opt)}
             </label><br>
           `;
         });
-        quizForm.innerHTML = `<div class="question"><p>${q.question}</p>${optionsHtml}</div>`;
+        quizForm.innerHTML = `<div class="question"><p>${escapeHtml(q.question || q.pregunta)}</p>${optionsHtml}</div>`;
 
         // Keyboard shortcuts for options (1-5)
         quizForm.onkeydown = function(e) {

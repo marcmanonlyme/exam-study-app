@@ -1,4 +1,5 @@
 // Handles Exam Simulator logic
+import { escapeHtml, formatDuration, parseDuration, getJson, setJson } from '../utils.js';
 export function renderExamSimConfig(mainContent, modules) {
   fetch('src/templates/examSimTableTemplate.html')
     .then(response => response.text())
@@ -35,6 +36,7 @@ export function renderExamSimConfig(mainContent, modules) {
         }
       }
       updateSortArrows();
+      // Attach sorting handlers
       document.getElementById('sortDate').onclick = function() {
         window.examSimSortState = { column: 'date', asc: window.examSimSortState.column === 'date' ? !window.examSimSortState.asc : true };
         renderExamScoresTable();
@@ -62,51 +64,19 @@ export function renderExamSimConfig(mainContent, modules) {
         startExamSim(mainContent, modules, timeLimit, numQuestions);
       };
     });
-  // Add sorting event listeners
-  document.getElementById('sortCorrect').onclick = function() {
-    window.examSimSortState = { column: 'correct', asc: window.examSimSortState.column === 'correct' ? !window.examSimSortState.asc : true };
-    renderExamScoresTable();
-    updateSortArrows();
-  };
-  document.getElementById('sortDate').onclick = function() {
-    window.examSimSortState = { column: 'date', asc: window.examSimSortState.column === 'date' ? !window.examSimSortState.asc : true };
-    renderExamScoresTable();
-    updateSortArrows();
-  };
-  document.getElementById('sortTotal').onclick = function() {
-    window.examSimSortState = { column: 'total', asc: window.examSimSortState.column === 'total' ? !window.examSimSortState.asc : true };
-    renderExamScoresTable();
-    updateSortArrows();
-  };
-  document.getElementById('sortDuration').onclick = function() {
-    window.examSimSortState = { column: 'duration', asc: window.examSimSortState.column === 'duration' ? !window.examSimSortState.asc : true };
-    renderExamScoresTable();
-    updateSortArrows();
-  };
-  document.getElementById('startExamBtn').onclick = function(e) {
-    e.preventDefault();
-    const timeLimit = parseInt(document.getElementById('examTime').value, 10);
-    const numQuestions = parseInt(document.getElementById('examNumQuestions').value, 10);
-    startExamSim(mainContent, modules, timeLimit, numQuestions);
-  };
 }
 
 function renderExamScoresTable() {
   const tbody = document.querySelector('#examScoresTable tbody');
   tbody.innerHTML = '';
-  let scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
+  let scores = getJson('examSimScores', []);
   // Sort if needed
   const sortState = window.examSimSortState || { column: null, asc: true };
   if (sortState.column) {
     scores = scores.slice();
     scores.sort((a, b) => {
       if (sortState.column === 'duration') {
-        // Parse mm:ss
-        const parseTime = t => {
-          const [m, s] = t.split(':').map(Number);
-          return m * 60 + s;
-        };
-        return sortState.asc ? parseTime(a.duration) - parseTime(b.duration) : parseTime(b.duration) - parseTime(a.duration);
+        return sortState.asc ? parseDuration(a.duration) - parseDuration(b.duration) : parseDuration(b.duration) - parseDuration(a.duration);
       } else if (sortState.column === 'date') {
         const da = new Date(a.date || a.timestamp || 0).getTime();
         const db = new Date(b.date || b.timestamp || 0).getTime();
@@ -130,15 +100,16 @@ function renderExamScoresTable() {
   tbody.querySelectorAll('.deleteScoreBtn').forEach(btn => {
     btn.onclick = function() {
       const idx = parseInt(btn.getAttribute('data-idx'), 10);
-      const scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
+      const scores = getJson('examSimScores', []);
       scores.splice(idx, 1);
-      localStorage.setItem('examSimScores', JSON.stringify(scores));
+      setJson('examSimScores', scores);
       renderExamScoresTable();
     };
   });
 }
 
 export async function startExamSim(mainContent, modules, timeLimit, numQuestions) {
+
   // Gather all questions from all modules
   let allQuestions = [];
   for (const mod of modules) {
@@ -195,15 +166,15 @@ export async function startExamSim(mainContent, modules, timeLimit, numQuestions
     const examForm = document.getElementById("examForm");
     const q = questions[currentIndex];
     let optionsHtml = '';
-    (q.options || q.opciones).forEach((opt, i) => {
+  (q.options || q.opciones).forEach((opt, i) => {
       optionsHtml += `
         <label tabindex="0">
           <input type="radio" name="q${currentIndex}" value="${i}" ${userAnswers[currentIndex] === i ? 'checked' : ''}>
-          ${opt}
+        ${escapeHtml(opt)}
         </label><br>
       `;
     });
-    examForm.innerHTML = `<div class="question"><p>${q.question || q.pregunta}</p>${optionsHtml}</div>`;
+  examForm.innerHTML = `<div class="question"><p>${escapeHtml(q.question || q.pregunta)}</p>${optionsHtml}</div>`;
     examForm.onkeydown = function(e) {
       if (e.key >= '1' && e.key <= String((q.options || q.opciones).length)) {
         const idx = Number(e.key) - 1;
@@ -268,7 +239,7 @@ export async function startExamSim(mainContent, modules, timeLimit, numQuestions
         const q = questions[idx];
         mainContent.innerHTML = `
           <h2>Pregunta saltada (${skippedCurrent + 1} de ${skippedIndexes.length})</h2>
-          <div class="question"><p>${q.question || q.pregunta}</p></div>
+        <div class="question"><p>${escapeHtml(q.question || q.pregunta)}</p></div>
           <form id="skippedForm"></form>
           <div style="margin-top:18px; display:flex; gap:10px;">
             <button id="prevSkippedBtn" ${skippedCurrent === 0 ? 'disabled' : ''}>Anterior</button>
@@ -283,7 +254,7 @@ export async function startExamSim(mainContent, modules, timeLimit, numQuestions
           optionsHtml += `
             <label tabindex="0">
               <input type="radio" name="qSkipped${idx}" value="${i}" ${userAnswers[idx] === i ? 'checked' : ''}>
-              ${opt}
+                  ${escapeHtml(opt)}
             </label><br>
           `;
         });
@@ -330,17 +301,15 @@ export async function startExamSim(mainContent, modules, timeLimit, numQuestions
         }
       });
       const total = questions.length;
-      const durationSec = Math.floor((Date.now() - startTime) / 1000);
-      const min = Math.floor(durationSec / 60);
-      const sec = durationSec % 60;
-      const durationStr = `${min}:${sec.toString().padStart(2,'0')}`;
-      // Save score
-      let scores = JSON.parse(localStorage.getItem('examSimScores') || '[]');
-      scores.push({ correct, total, duration: durationStr, date: new Date().toISOString() });
-      localStorage.setItem('examSimScores', JSON.stringify(scores));
+  const durationSec = Math.floor((Date.now() - startTime) / 1000);
+  const durationStr = formatDuration(durationSec);
+  // Save score
+  let scores = getJson('examSimScores', []);
+  scores.push({ correct, total, duration: durationStr, date: new Date().toISOString() });
+  setJson('examSimScores', scores);
       // Show result with wrong answers and explanations
       let reviewHtml = '';
-      questions.forEach((q, i) => {
+    questions.forEach((q, i) => {
         const ans = userAnswers[i];
         const isCorrect = ans !== null && ((q.answer !== undefined && ans === q.answer) || (q.respuesta !== undefined && (q.opciones ? q.opciones[ans] : q.options[ans]) === q.respuesta));
         if (!isCorrect) {
@@ -351,12 +320,12 @@ export async function startExamSim(mainContent, modules, timeLimit, numQuestions
             correctText = q.respuesta;
           }
           let explanation = q.explanation || q.explicacion || '';
-          reviewHtml += `<div style="background:#ffeaea;border-radius:8px;padding:12px;margin-bottom:12px;">
-            <strong>Pregunta ${i+1}:</strong> ${(q.question || q.pregunta)}<br>
-            <span style="color:#ff4136;">Tu respuesta: ${ans !== null ? (q.options || q.opciones)[ans] : 'Sin responder'}</span><br>
-            <span style="color:#2d6cdf;">Respuesta correcta: ${correctText}</span><br>
-            ${explanation ? `<div style='margin-top:6px;'><em>Explicación:</em> ${explanation}</div>` : ''}
-          </div>`;
+      reviewHtml += `<div style="background:#ffeaea;border-radius:8px;padding:12px;margin-bottom:12px;">
+        <strong>Pregunta ${i+1}:</strong> ${escapeHtml(q.question || q.pregunta)}<br>
+        <span style="color:#ff4136;">Tu respuesta: ${ans !== null ? escapeHtml((q.options || q.opciones)[ans]) : 'Sin responder'}</span><br>
+        <span style="color:#2d6cdf;">Respuesta correcta: ${escapeHtml(correctText)}</span><br>
+        ${explanation ? `<div style='margin-top:6px;'><em>Explicación:</em> ${escapeHtml(explanation)}</div>` : ''}
+      </div>`;
         }
       });
       mainContent.innerHTML = `<h2>Resultado del Examen</h2>

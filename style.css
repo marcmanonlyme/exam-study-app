@@ -144,11 +144,11 @@ h2 {
 .question label {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  padding: 8px 12px;
+  margin-bottom: 6px; /* reduced spacing between options */
+  padding: 6px 10px; /* slightly tighter padding */
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.18s, box-shadow 0.18s;
 }
 .question label:hover, .question label:focus-within {
   background: #eaf4ff;
@@ -156,9 +156,9 @@ h2 {
 }
 .question input[type="radio"] {
   accent-color: #4f8cff;
-  margin-right: 12px;
-  width: 20px;
-  height: 20px;
+  margin-right: 10px;
+  width: 18px; /* slightly smaller */
+  height: 18px; /* slightly smaller */
   outline: none;
 }
 .question input[type="radio"]:focus {
