@@ -4,6 +4,119 @@
     "options": ["Switch", "Router", "Hub", "Firewall"],
     "answer": 1,
     "explanation": "El router conecta redes distintas y determina la mejor ruta para enviar paquetes de datos."
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para asignar direcciones IP dinámicas en una red?",
+    "options": ["DNS", "DHCP", "HTTP", "FTP"],
+    "answer": 1,
+    "explanation": "DHCP asigna automáticamente direcciones IP a los dispositivos en una red."
+  },
+  {
+    "question": "¿Qué protocolo se usa para traducir nombres de dominio en direcciones IP?",
+    "options": ["DHCP", "DNS", "TCP", "SMTP"],
+    "answer": 1,
+    "explanation": "DNS convierte nombres como www.ejemplo.com en direcciones IP que los dispositivos pueden usar."
+  },
+  {
+    "question": "¿Qué capa del modelo OSI se encarga del direccionamiento lógico y enrutamiento?",
+    "options": ["Capa de enlace de datos", "Capa de red", "Capa de transporte", "Capa de aplicación"],
+    "answer": 1,
+    "explanation": "La capa de red gestiona el direccionamiento lógico y el enrutamiento de paquetes entre redes."
+  },
+  {
+    "question": "¿Qué protocolo garantiza la entrega confiable de datos entre dos dispositivos?",
+    "options": ["UDP", "IP", "TCP", "ARP"],
+    "answer": 2,
+    "explanation": "TCP establece conexiones y asegura que los datos lleguen completos y en orden."
+  },
+  {
+    "question": "¿Qué sistema operativo es ampliamente utilizado en servidores por su estabilidad y seguridad?",
+    "options": ["Windows", "Linux", "macOS", "Android"],
+    "answer": 1,
+    "explanation": "Linux es popular en servidores por su robustez, seguridad y código abierto."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para listar archivos en un directorio?",
+    "options": ["cd", "ls", "mkdir", "rm"],
+    "answer": 1,
+    "explanation": "El comando ls muestra los archivos y carpetas en el directorio actual."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para cambiar de directorio?",
+    "options": ["ls", "cd", "pwd", "mv"],
+    "answer": 1,
+    "explanation": "El comando cd permite navegar entre directorios en el sistema de archivos."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para eliminar archivos?",
+    "options": ["rm", "del", "erase", "remove"],
+    "answer": 0,
+    "explanation": "El comando rm elimina archivos o directorios del sistema."
+  },
+  {
+    "question": "¿Qué comando en Linux muestra la ruta completa del directorio actual?",
+    "options": ["cd", "ls", "pwd", "echo"],
+    "answer": 2,
+    "explanation": "pwd (print working directory) muestra la ruta completa del directorio en uso."
+  },
+  {
+    "question": "¿Qué herramienta se usa para proteger una red contra accesos no autorizados?",
+    "options": ["Switch", "Router", "Firewall", "Hub"],
+    "answer": 2,
+    "explanation": "El firewall filtra el tráfico de red y bloquea accesos no autorizados."
+  },
+  {
+    "question": "¿Qué tipo de software detecta y elimina programas maliciosos?",
+    "options": ["Firewall", "Antivirus", "Proxy", "IDS"],
+    "answer": 1,
+    "explanation": "El antivirus analiza archivos y procesos para detectar y eliminar malware."
+  },
+  {
+    "question": "¿Qué técnica de seguridad implica cifrar los datos para proteger su confidencialidad?",
+    "options": ["Autenticación", "Firewall", "Cifrado", "Backup"],
+    "answer": 2,
+    "explanation": "El cifrado convierte los datos en un formato ilegible sin la clave adecuada."
+  },
+  {
+    "question": "¿Qué tipo de ataque consiste en saturar un servidor con solicitudes para hacerlo inaccesible?",
+    "options": ["Phishing", "Man-in-the-middle", "DoS", "Spoofing"],
+    "answer": 2,
+    "explanation": "Un ataque DoS (Denial of Service) busca agotar los recursos del servidor para interrumpir su funcionamiento."
+  },
+  {
+    "question": "¿Qué protocolo se usa para transferir archivos entre computadoras en red?",
+    "options": ["HTTP", "FTP", "SMTP", "DHCP"],
+    "answer": 1,
+    "explanation": "FTP (File Transfer Protocol) permite enviar y recibir archivos entre sistemas conectados."
+  },
+  {
+    "question": "¿Qué protocolo se usa para enviar correos electrónicos?",
+    "options": ["FTP", "SMTP", "HTTP", "DNS"],
+    "answer": 1,
+    "explanation": "SMTP (Simple Mail Transfer Protocol) se usa para enviar correos electrónicos entre servidores."
+  },
+  {
+    "question": "¿Qué herramienta permite monitorear el estado de los servicios en un servidor?",
+    "options": ["Firewall", "Ping", "Top", "Monitor de servicios"],
+    "answer": 3,
+    "explanation": "El monitor de servicios permite verificar si los servicios están activos y funcionando correctamente."
+  },
+  {
+    "question": "¿Qué comando en Linux muestra los procesos activos?",
+    "options": ["ps", "top", "jobs", "kill"],
+    "answer": 1,
+    "explanation": "El comando top muestra los procesos en ejecución y el uso de recursos en tiempo real."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para finalizar un proceso?",
+    "options": ["end", "stop", "kill", "exit"],
+    "answer": 2,
+    "explanation": "El comando kill termina un proceso especificado por su ID."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para cambiar permisos de archivos?",
+    "options": ["chmod", "chown", "ls", "mv"],
+    "answer": 0,
+    "explanation": "chmod modifica los permisos de lectura, escritura y ejecución de archivos y directorios."
   }
-  // ...continúa el archivo original...
 ]

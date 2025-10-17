@@ -4,6 +4,119 @@
     "options": ["Una colección de archivos planos", "Un sistema que almacena datos en tablas relacionadas", "Un conjunto de algoritmos de búsqueda", "Un modelo de datos orientado a objetos"],
     "answer": 1,
     "explanation": "Una base de datos relacional organiza los datos en tablas con relaciones entre ellas mediante claves."
+  },
+  {
+    "question": "¿Qué lenguaje se utiliza para consultar bases de datos relacionales?",
+    "options": ["HTML", "Python", "SQL", "Java"],
+    "answer": 2,
+    "explanation": "SQL (Structured Query Language) es el lenguaje estándar para consultar y manipular bases de datos relacionales."
+  },
+  {
+    "question": "¿Qué tipo de clave identifica de forma única cada fila en una tabla?",
+    "options": ["Clave foránea", "Clave primaria", "Índice", "Clave compuesta"],
+    "answer": 1,
+    "explanation": "La clave primaria garantiza que cada fila en una tabla sea única y no nula."
+  },
+  {
+    "question": "¿Qué tipo de clave establece una relación entre dos tablas?",
+    "options": ["Clave primaria", "Clave foránea", "Índice", "Clave alternativa"],
+    "answer": 1,
+    "explanation": "La clave foránea conecta una tabla con otra, referenciando su clave primaria."
+  },
+  {
+    "question": "¿Qué operación SQL se usa para combinar datos de dos tablas relacionadas?",
+    "options": ["SELECT", "JOIN", "INSERT", "UPDATE"],
+    "answer": 1,
+    "explanation": "JOIN permite combinar filas de dos tablas basadas en una relación común."
+  },
+  {
+    "question": "¿Qué comando SQL se usa para agregar una nueva fila a una tabla?",
+    "options": ["SELECT", "INSERT", "UPDATE", "DELETE"],
+    "answer": 1,
+    "explanation": "INSERT agrega una nueva fila con valores específicos a una tabla."
+  },
+  {
+    "question": "¿Qué comando SQL se usa para modificar datos existentes en una tabla?",
+    "options": ["SELECT", "INSERT", "UPDATE", "DELETE"],
+    "answer": 2,
+    "explanation": "UPDATE permite cambiar los valores de una o más columnas en filas existentes."
+  },
+  {
+    "question": "¿Qué comando SQL se usa para eliminar filas de una tabla?",
+    "options": ["SELECT", "INSERT", "UPDATE", "DELETE"],
+    "answer": 3,
+    "explanation": "DELETE elimina una o más filas de una tabla según una condición."
+  },
+  {
+    "question": "¿Qué nivel de normalización elimina grupos repetitivos y asegura una clave primaria?",
+    "options": ["Primera forma normal (1FN)", "Segunda forma normal (2FN)", "Tercera forma normal (3FN)", "Forma normal de Boyce-Codd"],
+    "answer": 0,
+    "explanation": "La primera forma normal elimina grupos repetitivos y requiere una clave primaria definida."
+  },
+  {
+    "question": "¿Qué forma normal elimina dependencias parciales de la clave primaria?",
+    "options": ["1FN", "2FN", "3FN", "Forma normal de Boyce-Codd"],
+    "answer": 1,
+    "explanation": "La segunda forma normal elimina dependencias parciales, asegurando que los atributos dependan completamente de la clave primaria."
+  },
+  {
+    "question": "¿Qué forma normal elimina dependencias transitivas entre atributos no clave?",
+    "options": ["1FN", "2FN", "3FN", "Forma normal de Boyce-Codd"],
+    "answer": 2,
+    "explanation": "La tercera forma normal elimina dependencias transitivas entre atributos no clave."
+  },
+  {
+    "question": "¿Qué tipo de índice mejora el rendimiento de las consultas en una tabla?",
+    "options": ["Índice primario", "Índice foráneo", "Índice compuesto", "Índice secundario"],
+    "answer": 3,
+    "explanation": "Un índice secundario permite búsquedas rápidas en columnas que no son claves primarias."
+  },
+  {
+    "question": "¿Qué propiedad de las transacciones garantiza que los datos permanezcan consistentes?",
+    "options": ["Atomicidad", "Consistencia", "Aislamiento", "Durabilidad"],
+    "answer": 1,
+    "explanation": "La consistencia asegura que una transacción lleve la base de datos de un estado válido a otro."
+  },
+  {
+    "question": "¿Qué propiedad de las transacciones asegura que los cambios se mantengan incluso ante fallos?",
+    "options": ["Atomicidad", "Consistencia", "Aislamiento", "Durabilidad"],
+    "answer": 3,
+    "explanation": "La durabilidad garantiza que los cambios realizados por una transacción persistirán incluso ante fallos del sistema."
+  },
+  {
+    "question": "¿Qué propiedad de las transacciones asegura que se ejecuten completamente o no se ejecuten en absoluto?",
+    "options": ["Atomicidad", "Consistencia", "Aislamiento", "Durabilidad"],
+    "answer": 0,
+    "explanation": "La atomicidad asegura que una transacción se ejecute completamente o se revierta por completo."
+  },
+  {
+    "question": "¿Qué propiedad de las transacciones evita interferencias entre transacciones concurrentes?",
+    "options": ["Atomicidad", "Consistencia", "Aislamiento", "Durabilidad"],
+    "answer": 2,
+    "explanation": "El aislamiento evita que transacciones concurrentes afecten sus resultados mutuamente."
+  },
+  {
+    "question": "¿Qué comando SQL se usa para crear una nueva tabla?",
+    "options": ["CREATE TABLE", "INSERT INTO", "SELECT FROM", "ALTER TABLE"],
+    "answer": 0,
+    "explanation": "CREATE TABLE define una nueva tabla con sus columnas y tipos de datos."
+  },
+  {
+    "question": "¿Qué comando SQL se usa para modificar la estructura de una tabla existente?",
+    "options": ["CREATE TABLE", "ALTER TABLE", "DROP TABLE", "UPDATE TABLE"],
+    "answer": 1,
+    "explanation": "ALTER TABLE permite agregar, modificar o eliminar columnas en una tabla existente."
+  },
+  {
+    "question": "¿Qué comando SQL se usa para eliminar una tabla de la base de datos?",
+    "options": ["DELETE TABLE", "DROP TABLE", "REMOVE TABLE", "TRUNCATE TABLE"],
+    "answer": 1,
+    "explanation": "DROP TABLE elimina completamente la tabla y sus datos de la base de datos."
+  },
+  {
+    "question": "¿Qué comando SQL elimina todos los datos de una tabla pero conserva su estructura?",
+    "options": ["DELETE", "DROP", "TRUNCATE", "REMOVE"],
+    "answer": 2,
+    "explanation": "TRUNCATE elimina todas las filas de una tabla sin borrar su definición."
   }
-  // ...continúa el archivo original...
 ]

@@ -4,6 +4,119 @@
     "options": ["FTP", "SSH", "HTTP", "Telnet"],
     "answer": 1,
     "explanation": "SSH (Secure Shell) permite acceder y administrar servidores de forma segura mediante cifrado."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para copiar archivos?",
+    "options": ["mv", "cp", "copy", "clone"],
+    "answer": 1,
+    "explanation": "El comando cp copia archivos o directorios de una ubicación a otra."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para mover o renombrar archivos?",
+    "options": ["mv", "cp", "rename", "shift"],
+    "answer": 0,
+    "explanation": "El comando mv mueve archivos o cambia su nombre."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para crear un nuevo directorio?",
+    "options": ["mkdir", "newdir", "createdir", "md"],
+    "answer": 0,
+    "explanation": "mkdir crea un nuevo directorio en la ubicación especificada."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver el contenido de un archivo de texto?",
+    "options": ["cat", "ls", "view", "open"],
+    "answer": 0,
+    "explanation": "El comando cat muestra el contenido de archivos de texto en la terminal."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para cambiar el propietario de un archivo?",
+    "options": ["chmod", "chown", "chgrp", "owner"],
+    "answer": 1,
+    "explanation": "chown cambia el propietario de un archivo o directorio."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para cambiar el grupo de un archivo?",
+    "options": ["chmod", "chown", "chgrp", "groupmod"],
+    "answer": 2,
+    "explanation": "chgrp cambia el grupo asociado a un archivo o directorio."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver el espacio libre en disco?",
+    "options": ["df", "du", "free", "space"],
+    "answer": 0,
+    "explanation": "df muestra el uso y disponibilidad de espacio en los sistemas de archivos montados."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver el uso de espacio por directorio?",
+    "options": ["df", "du", "free", "ls -s"],
+    "answer": 1,
+    "explanation": "du muestra el tamaño de directorios y archivos, útil para analizar uso de espacio."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver la memoria disponible?",
+    "options": ["df", "du", "free", "mem"],
+    "answer": 2,
+    "explanation": "free muestra la cantidad de memoria libre y usada en el sistema."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver la dirección IP del equipo?",
+    "options": ["ip addr", "ifconfig", "netstat", "hostname"],
+    "answer": 0,
+    "explanation": "ip addr muestra las direcciones IP asignadas a las interfaces de red."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para probar la conectividad con otro host?",
+    "options": ["ping", "traceroute", "netstat", "connect"],
+    "answer": 0,
+    "explanation": "ping envía paquetes ICMP para verificar si un host está accesible."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para rastrear la ruta que sigue un paquete?",
+    "options": ["ping", "traceroute", "netstat", "route"],
+    "answer": 1,
+    "explanation": "traceroute muestra los nodos intermedios por los que pasa un paquete hasta su destino."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver las conexiones de red activas?",
+    "options": ["netstat", "ping", "ip addr", "traceroute"],
+    "answer": 0,
+    "explanation": "netstat muestra las conexiones de red activas, puertos abiertos y estadísticas de red."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver el nombre del host?",
+    "options": ["hostname", "uname", "whoami", "host"],
+    "answer": 0,
+    "explanation": "hostname muestra el nombre del equipo en la red."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver información del sistema operativo?",
+    "options": ["uname", "hostname", "version", "sysinfo"],
+    "answer": 0,
+    "explanation": "uname muestra información sobre el sistema operativo y el kernel."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para ver la fecha y hora actuales?",
+    "options": ["date", "time", "clock", "now"],
+    "answer": 0,
+    "explanation": "date muestra la fecha y hora actuales del sistema."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para programar tareas automáticas?",
+    "options": ["cron", "task", "schedule", "autoexec"],
+    "answer": 0,
+    "explanation": "cron permite programar tareas recurrentes mediante el archivo crontab."
+  },
+  {
+    "question": "¿Qué archivo en Linux define las tareas programadas por el usuario?",
+    "options": ["crontab", "schedule.conf", "tasks.ini", "jobs.txt"],
+    "answer": 0,
+    "explanation": "crontab contiene las tareas programadas que el sistema ejecuta automáticamente en horarios definidos."
+  },
+  {
+    "question": "¿Qué comando en Linux se usa para editar el archivo de tareas programadas?",
+    "options": ["crontab -e", "cronedit", "editcron", "schedule -e"],
+    "answer": 0,
+    "explanation": "crontab -e abre el editor para modificar las tareas programadas del usuario."
   }
-  // ...continúa el archivo original...
 ]

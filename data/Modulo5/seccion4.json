@@ -4,6 +4,113 @@
     "options": ["accesskey", "tabindex", "role", "aria-label"],
     "answer": 1,
     "explanation": "tabindex define el orden de navegación por teclado entre elementos interactivos."
+  },
+  {
+    "question": "¿Qué atributo HTML permite definir una tecla de acceso rápido?",
+    "options": ["accesskey", "tabindex", "shortcut", "aria-key"],
+    "answer": 0,
+    "explanation": "accesskey asigna una tecla que activa un elemento sin usar el mouse."
+  },
+  {
+    "question": "¿Qué atributo HTML mejora la accesibilidad al describir la función de un elemento?",
+    "options": ["role", "alt", "title", "aria-label"],
+    "answer": 3,
+    "explanation": "aria-label proporciona una descripción accesible para lectores de pantalla."
+  },
+  {
+    "question": "¿Qué etiqueta HTML se usa para definir una navegación principal?",
+    "options": ["<nav>", "<menu>", "<aside>", "<header>"],
+    "answer": 0,
+    "explanation": "<nav> indica un bloque de navegación principal en la estructura semántica."
+  },
+  {
+    "question": "¿Qué técnica mejora la visibilidad de un sitio web en buscadores?",
+    "options": ["SEO", "SEM", "UX", "UI"],
+    "answer": 0,
+    "explanation": "SEO (Search Engine Optimization) optimiza el contenido y estructura para mejorar el posicionamiento en buscadores."
+  },
+  {
+    "question": "¿Qué etiqueta HTML ayuda al SEO al definir el título de la página?",
+    "options": ["<title>", "<h1>", "<meta>", "<header>"],
+    "answer": 0,
+    "explanation": "<title> define el título que aparece en los resultados de búsqueda y pestañas del navegador."
+  },
+  {
+    "question": "¿Qué etiqueta HTML se usa para definir metadatos como descripción y palabras clave?",
+    "options": ["<meta>", "<head>", "<link>", "<script>"],
+    "answer": 0,
+    "explanation": "<meta> permite incluir información como descripción, autor y palabras clave para SEO."
+  },
+  {
+    "question": "¿Qué herramienta permite subir sitios web estáticos a GitHub Pages?",
+    "options": ["Git", "Jekyll", "npm", "Netlify"],
+    "answer": 1,
+    "explanation": "Jekyll convierte contenido en HTML y permite desplegarlo fácilmente en GitHub Pages."
+  },
+  {
+    "question": "¿Qué servicio permite desplegar sitios web estáticos con integración continua?",
+    "options": ["GitHub Pages", "Netlify", "Heroku", "Firebase"],
+    "answer": 1,
+    "explanation": "Netlify permite desplegar sitios estáticos con CI/CD, formularios y funciones serverless."
+  },
+  {
+    "question": "¿Qué servicio permite desplegar aplicaciones web con backend en Node.js?",
+    "options": ["GitHub Pages", "Netlify", "Heroku", "Jekyll"],
+    "answer": 2,
+    "explanation": "Heroku permite desplegar aplicaciones web completas con soporte para Node.js, Python y más."
+  },
+  {
+    "question": "¿Qué servicio permite alojar aplicaciones web y móviles con base de datos integrada?",
+    "options": ["Netlify", "GitHub Pages", "Firebase", "Jekyll"],
+    "answer": 2,
+    "explanation": "Firebase ofrece alojamiento, autenticación, base de datos y funciones para apps web y móviles."
+  },
+  {
+    "question": "¿Qué comando se usa para instalar dependencias en un proyecto Node.js?",
+    "options": ["npm install", "npm run", "node start", "npm init"],
+    "answer": 0,
+    "explanation": "npm install descarga e instala las dependencias definidas en package.json."
+  },
+  {
+    "question": "¿Qué archivo define las dependencias y scripts en un proyecto Node.js?",
+    "options": ["package.json", "Dockerfile", "index.js", "config.yaml"],
+    "answer": 0,
+    "explanation": "package.json contiene la configuración del proyecto, dependencias y scripts de ejecución."
+  },
+  {
+    "question": "¿Qué comando se usa para iniciar una aplicación Node.js?",
+    "options": ["node index.js", "npm start", "npm run dev", "node start"],
+    "answer": 1,
+    "explanation": "npm start ejecuta el script definido como inicio en package.json."
+  },
+  {
+    "question": "¿Qué comando se usa para iniciar una app en modo desarrollo con recarga automática?",
+    "options": ["npm run dev", "node index.js", "npm start", "nodemon"],
+    "answer": 0,
+    "explanation": "npm run dev ejecuta el script de desarrollo, comúnmente configurado con herramientas como nodemon."
+  },
+  {
+    "question": "¿Qué práctica mejora la mantenibilidad del código en proyectos web?",
+    "options": ["Minificación", "Modularización", "Compresión", "Obfuscación"],
+    "answer": 1,
+    "explanation": "La modularización divide el código en partes reutilizables y fáciles de mantener."
+  },
+  {
+    "question": "¿Qué técnica permite reducir el tamaño de archivos CSS y JS para producción?",
+    "options": ["Modularización", "Minificación", "Compresión", "Caching"],
+    "answer": 1,
+    "explanation": "La minificación elimina espacios, comentarios y caracteres innecesarios para reducir el tamaño."
+  },
+  {
+    "question": "¿Qué técnica permite almacenar archivos en el navegador para mejorar el rendimiento?",
+    "options": ["Caching", "Minificación", "Compresión", "Obfuscación"],
+    "answer": 0,
+    "explanation": "El caching guarda archivos en el navegador para evitar descargas repetidas y acelerar la carga."
+  },
+  {
+    "question": "¿Qué documento describe el propósito, uso y estructura de un sistema software?",
+    "options": ["Manual de usuario", "README", "Plan de pruebas", "Especificación técnica"],
+    "answer": 1,
+    "explanation": "El archivo README explica cómo instalar, usar y contribuir al proyecto de software."
   }
-  // ...continúa el archivo original...
 ]

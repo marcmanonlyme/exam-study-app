@@ -39,7 +39,84 @@
     "question": "¿Qué modelo de desarrollo se basa en entregas frecuentes y colaboración constante?",
     "options": ["Cascada", "Ágil", "Espiral", "Prototipos"],
     "answer": 1,
-    "explanation": "Ágil promueve entregas frecuentes, colaboración y adaptación continua a los cambios."
+    "explanation": "Ágil promueve entregas rápidas, trabajo en equipo y adaptación continua."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar la interacción entre módulos?",
+    "options": ["Prueba unitaria", "Prueba de integración", "Prueba de validación", "Prueba de aceptación"],
+    "answer": 1,
+    "explanation": "La prueba de integración verifica que los módulos funcionen correctamente al interactuar entre sí."
+  },
+  {
+    "question": "¿Qué norma se enfoca en la calidad del producto software?",
+    "options": ["ISO/IEC 12207", "IEEE 830", "ISO/IEC 25010", "IEEE 1012"],
+    "answer": 2,
+    "explanation": "La norma ISO/IEC 25010 define características de calidad como mantenibilidad, usabilidad y fiabilidad."
+  },
+  {
+    "question": "¿Qué estructura de datos se usa comúnmente para implementar llamadas recursivas?",
+    "options": ["Cola", "Pila", "Árbol", "Lista"],
+    "answer": 1,
+    "explanation": "La pila (stack) se usa para almacenar el contexto de cada llamada recursiva."
+  },
+  {
+    "question": "¿Qué técnica permite ocultar los detalles internos de una clase?",
+    "options": ["Herencia", "Polimorfismo", "Encapsulamiento", "Abstracción"],
+    "answer": 2,
+    "explanation": "El encapsulamiento protege los datos internos y expone solo lo necesario mediante interfaces públicas."
+  },
+  {
+    "question": "¿Qué tipo de mantenimiento se realiza para agregar nuevas funcionalidades?",
+    "options": ["Correctivo", "Adaptativo", "Perfectivo", "Preventivo"],
+    "answer": 2,
+    "explanation": "El mantenimiento perfectivo busca mejorar el sistema agregando nuevas funciones o mejorando las existentes."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza por el cliente para aceptar el sistema?",
+    "options": ["Prueba de integración", "Prueba de sistema", "Prueba de aceptación", "Prueba unitaria"],
+    "answer": 2,
+    "explanation": "La prueba de aceptación valida que el sistema cumple con los requisitos del cliente antes de su implementación."
+  },
+  {
+    "question": "¿Qué modelo de desarrollo permite construir prototipos rápidos para validar requisitos?",
+    "options": ["Cascada", "Ágil", "Prototipos", "Espiral"],
+    "answer": 2,
+    "explanation": "El modelo de prototipos permite construir versiones preliminares para validar ideas con el usuario."
+  },
+  {
+    "question": "¿Qué estructura de datos es más adecuada para representar redes sociales?",
+    "options": ["Árbol", "Lista", "Grafo", "Cola"],
+    "answer": 2,
+    "explanation": "Los grafos permiten representar relaciones múltiples entre entidades, como usuarios conectados en redes sociales."
+  },
+  {
+    "question": "¿Qué principio SOLID indica que las interfaces deben ser específicas y no obligar a implementar métodos innecesarios?",
+    "options": ["Open/Closed", "Interface Segregation", "Single Responsibility", "Dependency Inversion"],
+    "answer": 1,
+    "explanation": "El principio de segregación de interfaces promueve interfaces pequeñas y enfocadas."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para evaluar el rendimiento del sistema bajo carga?",
+    "options": ["Prueba de regresión", "Prueba de carga", "Prueba de integración", "Prueba de aceptación"],
+    "answer": 1,
+    "explanation": "La prueba de carga mide cómo se comporta el sistema ante múltiples usuarios o procesos simultáneos."
+  },
+  {
+    "question": "¿Qué técnica permite reutilizar código mediante clases base y derivadas?",
+    "options": ["Encapsulamiento", "Herencia", "Polimorfismo", "Abstracción"],
+    "answer": 1,
+    "explanation": "La herencia permite que una clase derive de otra y reutilice sus atributos y métodos."
+  },
+  {
+    "question": "¿Qué tipo de mantenimiento se realiza para adaptar el software a nuevos entornos?",
+    "options": ["Correctivo", "Perfectivo", "Preventivo", "Adaptativo"],
+    "answer": 3,
+    "explanation": "El mantenimiento adaptativo modifica el software para que funcione en nuevos entornos o plataformas."
+  },
+  {
+    "question": "¿Qué estructura de datos se usa para implementar el recorrido en profundidad (DFS)?",
+    "options": ["Cola", "Pila", "Lista", "Árbol"],
+    "answer": 1,
+    "explanation": "El recorrido en profundidad (DFS) utiliza una pila para explorar nodos antes de retroceder."
   }
-  // ...continúa el archivo original...
 ]

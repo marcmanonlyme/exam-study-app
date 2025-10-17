@@ -1,5 +1,6 @@
 // Handles splash screen and countdown
-import { modules } from './modules.js';
+import { modules } from '../modules.js';
+import { computeModuleStats } from '../utils.js';
 
 export function renderSplashScreen(mainContent) {
   mainContent.innerHTML = `<h1>🧠 Cuestionarios por Módulo</h1>
@@ -28,25 +29,13 @@ function renderCountdown() {
   setInterval(updateCountdown, 1000);
 }
 
-function renderStats() {
+async function renderStats() {
   let html = '<h2>Estadísticas por módulo</h2><table border="1" cellpadding="6"><tr><th>Módulo</th><th>Correctas</th><th>Incorrectas</th><th>No respondidas</th></tr>';
-  modules.forEach(mod => {
-    let correct = 0, incorrect = 0, notAnswered = 0, total = 0;
-    mod.sections.forEach(sec => {
-      const key = `resultado_${mod.name}_seccion${sec}`;
-      const res = localStorage.getItem(key);
-      if (res) {
-        const obj = JSON.parse(res);
-        correct += obj.score;
-        incorrect += (obj.total - obj.score);
-        total += obj.total;
-      } else {
-        notAnswered += 5; // Assume 5 questions per section if not answered
-        total += 5;
-      }
-    });
-    html += `<tr><td>${mod.name}</td><td>${correct}</td><td>${incorrect}</td><td>${notAnswered}</td></tr>`;
-  });
+  for (const mod of modules) {
+    // Compute module stats (prefers aggregated stats and falls back to per-section)
+    const stats = await computeModuleStats(mod);
+    html += `<tr><td>${mod.name}</td><td>${stats.correct}</td><td>${stats.incorrect}</td><td>${stats.notAnswered}</td></tr>`;
+  }
   html += '</table>';
   document.getElementById('stats').innerHTML = html;
 }

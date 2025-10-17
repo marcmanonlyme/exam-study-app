@@ -4,6 +4,119 @@
     "options": ["Diagrama de clases", "Diagrama de flujo de datos (DFD)", "Diagrama de estados", "Diagrama de casos de uso"],
     "answer": 1,
     "explanation": "El DFD muestra cómo los datos se mueven entre procesos, almacenes y entidades externas."
+  },
+  {
+    "question": "¿Qué herramienta se usa para modelar entidades y relaciones en bases de datos?",
+    "options": ["UML", "DFD", "ERD", "BPMN"],
+    "answer": 2,
+    "explanation": "El diagrama entidad-relación (ERD) representa entidades, atributos y relaciones en bases de datos."
+  },
+  {
+    "question": "¿Qué métrica mide el número de decisiones lógicas en un programa?",
+    "options": ["Complejidad ciclomática", "Acoplamiento", "Cohesión", "Cobertura de código"],
+    "answer": 0,
+    "explanation": "La complejidad ciclomática mide la cantidad de caminos independientes en el código."
+  },
+  {
+    "question": "¿Qué métrica evalúa qué tan relacionadas están las funciones dentro de un módulo?",
+    "options": ["Acoplamiento", "Cohesión", "Complejidad", "Fiabilidad"],
+    "answer": 1,
+    "explanation": "La cohesión mide la unidad funcional de un módulo; alta cohesión indica funciones estrechamente relacionadas."
+  },
+  {
+    "question": "¿Qué métrica evalúa el grado de dependencia entre módulos?",
+    "options": ["Cohesión", "Acoplamiento", "Portabilidad", "Usabilidad"],
+    "answer": 1,
+    "explanation": "El acoplamiento mide cuán interdependientes son los módulos; bajo acoplamiento es preferible."
+  },
+  {
+    "question": "¿Qué técnica se usa para proteger la integridad de los datos transmitidos?",
+    "options": ["Cifrado", "Hashing", "Firewall", "Autenticación"],
+    "answer": 1,
+    "explanation": "El hashing genera una huella digital del contenido para verificar que no ha sido alterado."
+  },
+  {
+    "question": "¿Qué componente de seguridad controla el acceso a recursos según permisos?",
+    "options": ["Autenticación", "Autorización", "Cifrado", "Hashing"],
+    "answer": 1,
+    "explanation": "La autorización determina qué acciones puede realizar un usuario una vez autenticado."
+  },
+  {
+    "question": "¿Qué técnica se usa para detectar vulnerabilidades en el código fuente?",
+    "options": ["Pruebas unitarias", "Análisis estático", "Integración continua", "Refactorización"],
+    "answer": 1,
+    "explanation": "El análisis estático examina el código sin ejecutarlo para encontrar errores y vulnerabilidades."
+  },
+  {
+    "question": "¿Qué patrón arquitectónico separa la lógica de presentación, negocio y datos?",
+    "options": ["Microservicios", "MVC", "Pipe and Filter", "Cliente-servidor"],
+    "answer": 1,
+    "explanation": "El patrón Modelo-Vista-Controlador (MVC) divide el sistema en tres componentes para facilitar mantenimiento."
+  },
+  {
+    "question": "¿Qué patrón arquitectónico permite procesamiento secuencial de datos por etapas?",
+    "options": ["Pipe and Filter", "MVC", "Microservicios", "Monolítico"],
+    "answer": 0,
+    "explanation": "Pipe and Filter organiza el sistema como una cadena de componentes que transforman datos secuencialmente."
+  },
+  {
+    "question": "¿Qué tipo de documentación describe cómo se implementa una solución técnica?",
+    "options": ["Especificación de requisitos", "Diseño técnico", "Manual de usuario", "Plan de pruebas"],
+    "answer": 1,
+    "explanation": "El diseño técnico detalla la arquitectura, componentes y decisiones de implementación del sistema."
+  },
+  {
+    "question": "¿Qué documento describe cómo se verificará que el sistema cumple con los requisitos?",
+    "options": ["Plan de pruebas", "Diseño técnico", "Manual de usuario", "Especificación de requisitos"],
+    "answer": 0,
+    "explanation": "El plan de pruebas define los casos, criterios y procedimientos para validar el sistema."
+  },
+  {
+    "question": "¿Qué tipo de prueba se realiza para verificar la seguridad del sistema?",
+    "options": ["Prueba de carga", "Prueba de estrés", "Prueba de penetración", "Prueba de regresión"],
+    "answer": 2,
+    "explanation": "La prueba de penetración simula ataques para identificar vulnerabilidades de seguridad."
+  },
+  {
+    "question": "¿Qué técnica se usa para mejorar el diseño del código sin cambiar su funcionalidad?",
+    "options": ["Refactorización", "Compilación", "Prueba de unidad", "Integración continua"],
+    "answer": 0,
+    "explanation": "La refactorización mejora la estructura interna del código sin alterar su comportamiento externo."
+  },
+  {
+    "question": "¿Qué herramienta automatiza la construcción y prueba del software en cada cambio?",
+    "options": ["Refactorización", "Integración continua", "Prueba de estrés", "Modelado de amenazas"],
+    "answer": 1,
+    "explanation": "La integración continua permite detectar errores rápidamente al integrar y probar cambios frecuentemente."
+  },
+  {
+    "question": "¿Qué tipo de requisito describe restricciones técnicas como plataforma o lenguaje?",
+    "options": ["Funcional", "No funcional", "De implementación", "De negocio"],
+    "answer": 2,
+    "explanation": "Los requisitos de implementación especifican condiciones técnicas necesarias para desarrollar el sistema."
+  },
+  {
+    "question": "¿Qué técnica permite representar el comportamiento del sistema ante eventos externos?",
+    "options": ["Diagrama de clases", "Diagrama de estados", "Diagrama de flujo", "Diagrama de casos de uso"],
+    "answer": 1,
+    "explanation": "El diagrama de estados muestra cómo responde el sistema a eventos y transiciones entre estados."
+  },
+  {
+    "question": "¿Qué tipo de requisito describe objetivos estratégicos que el sistema debe apoyar?",
+    "options": ["Funcional", "No funcional", "De negocio", "De usuario"],
+    "answer": 2,
+    "explanation": "Los requisitos de negocio reflejan metas organizacionales que el sistema debe facilitar."
+  },
+  {
+    "question": "¿Qué técnica se usa para representar interacciones entre actores y el sistema?",
+    "options": ["Diagrama de flujo", "Diagrama de clases", "Casos de uso", "Diagrama de estados"],
+    "answer": 2,
+    "explanation": "Los casos de uso modelan cómo los actores interactúan con el sistema para lograr objetivos."
+  },
+  {
+    "question": "¿Qué norma define procesos de validación y verificación del software?",
+    "options": ["IEEE 830", "ISO/IEC 12207", "IEEE 1012", "ISO/IEC 25010"],
+    "answer": 2,
+    "explanation": "La norma IEEE 1012 establece procesos para verificar y validar productos software en cada fase del ciclo de vida."
   }
-  // ...continúa el archivo original...
 ]
